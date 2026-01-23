@@ -1,0 +1,24 @@
+---
+import clsx from "clsx";
+
+type Variant = "primary" | "secondary";
+
+type Props = {
+  href?: string;
+  variant?: Variant;
+};
+
+const { href = "#", variant = "primary" } = Astro.props as Props;
+
+const classes = clsx("inline-block cursor-pointer transition rounded", {
+  "bg-indigo-600 text-white px-6 py-3 hover:bg-indigo-500":
+    variant === "primary",
+
+  "text-neutral-900 underline underline-offset-4 hover:text-neutral-700":
+    variant === "secondary",
+});
+---
+
+<a href={href} class={classes}>
+  <slot />
+</a>

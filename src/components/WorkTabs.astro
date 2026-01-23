@@ -1,4 +1,5 @@
 ---
+import { ArrowRight, Minus } from "@lucide/astro";
 import Title from "./ui/Title.astro";
 
 const projects = [
@@ -53,7 +54,7 @@ const projects = [
             role="tab"
             tabindex={idx === 0 ? "0" : "-1"}
             aria-selected={idx === 0 ? "true" : "false"}
-            class="work-tab block w-full text-left text-sm px-3 py-2 rounded text-neutral-600 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-indigo-600/30 data-[active=true]:text-indigo-600 data-[active=true]:bg-indigo-600/5"
+            class="work-tab block w-full text-left text-sm px-3 py-2 rounded-xl text-neutral-900 outline-none cursor-pointer data-[active=true]:text-indigo-600 data-[active=true]:bg-indigo-600/5"
             data-target={project.id}
             data-active={idx === 0 ? "true" : "false"}
           >
@@ -80,17 +81,22 @@ const projects = [
               {project.description}
             </p>
 
-            <ul class="mt-6 space-y-2 text-sm text-neutral-600">
+            <ul class="mt-6 space-y-2 text-sm ">
               {project.highlights.map((item) => (
-                <li class="before:content-['—'] before:mr-2">{item}</li>
+                <li class="flex items-center gap-2">
+                  <Minus class="text-indigo-600 size-3.5" />
+                  <span class="text-neutral-700">{item}</span>
+                </li>
               ))}
             </ul>
             <div class="mt-6">
               <a
                 href="/work"
-                class="inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                class="inline-flex items-center gap-2 text-sm font-medium"
               >
-                Ver más
+                <span class="text-indigo-600 hover:text-indigo-500">
+                  Ver más
+                </span>
               </a>
             </div>
           </div>

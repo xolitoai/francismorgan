@@ -10,7 +10,7 @@ type Props = {
 
 const { href = "#", variant = "primary" } = Astro.props as Props;
 
-const classes = clsx("inline-block cursor-pointer transition rounded", {
+const classes = clsx("inline-block cursor-pointer transition rounded-xl", {
   "bg-indigo-600 text-white px-6 py-3 hover:bg-indigo-500":
     variant === "primary",
 

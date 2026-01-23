@@ -38,3 +38,24 @@
 @theme {
   --font-sans: "Manrope", system-ui, sans-serif;
 }
+
+@layer components {
+  .marquee {
+    display: flex;
+    width: max-content;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 4rem; /* spacing between icons */
+    padding-right: 4rem; /* spacing between set A → set B */
+    animation: marquee 20s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}

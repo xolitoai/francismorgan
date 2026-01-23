@@ -1,0 +1,32 @@
+---
+import { type AstroComponent } from "@lucide/astro";
+import clsx from "clsx";
+
+type Variant = "bordered" | "plain";
+
+type Props = {
+  variant?: Variant;
+  icon?: AstroComponent;
+  title: string;
+  content: string;
+};
+
+const { variant = "plain", icon: Icon, title, content } = Astro.props as Props;
+
+const classes = clsx("p-6 rounded-lg transition", {
+  "border border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50":
+    variant === "bordered",
+});
+---
+
+<div class={classes}>
+  {Icon && <Icon class="size-6 text-neutral-900" />}
+
+  <h3 class="mt-4 font-semibold text-neutral-900">
+    {title}
+  </h3>
+
+  <p class="mt-2 text-neutral-700">
+    {content}
+  </p>
+</div>

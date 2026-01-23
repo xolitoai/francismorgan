@@ -1,0 +1,35 @@
+---
+import { Globe, LayoutDashboard, Wrench } from "@lucide/astro";
+import Card from "./ui/Card.astro";
+---
+
+<section class="mt-24 sm:mt-32">
+  <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900">
+    Qué construimos
+  </h2>
+
+  <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <Card
+      variant="bordered"
+      icon={Globe}
+      title="Sitios web para negocios"
+      content="Páginas profesionales, rápidas y enfocadas en comunicar valor."
+    />
+
+    <Card
+      variant="bordered"
+      icon={LayoutDashboard}
+      title="Aplicaciones web a la medida"
+      content="Sistemas diseñados según los procesos de tu empresa."
+    />
+
+    <div class="sm:col-span-2">
+      <Card
+        variant="bordered"
+        icon={Wrench}
+        title="Herramientas internas y automatización"
+        content="Soluciones para reducir trabajo manual y mejorar eficiencia."
+      />
+    </div>
+  </div>
+</section>

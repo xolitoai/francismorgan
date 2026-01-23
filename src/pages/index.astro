@@ -1,20 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import WhatWeBuild from "../components/WhatWeBuild.astro";
+import HowDoWeWork from "../components/HowDoWeWork.astro";
+import Hero from "../components/Hero.astro";
+import WhyChooseUs from "../components/WhyChooseUs.astro";
+import Cta from "../components/Cta.astro";
 ---
 
 <Layout>
-  <main class="px-6 py-24 max-w-3xl mx-auto">
-    <h1 class="text-4xl font-black tracking-tight">
-      Desarrollo web a la medida
-    </h1>
+  <main class="px-6 py-20 sm:py-24 max-w-3xl mx-auto">
+    <!-- hero -->
+    <Hero />
 
-    <p class="mt-4 text-lg text-gray-600">
-      Sitios web, aplicaciones web y herramientas internas hechas
-      específicamente para tu negocio.
-    </p>
+    <!-- what do we build -->
+    <WhatWeBuild />
 
-    <a class="inline-block mt-8 bg-black text-white px-6 py-3 rounded">
-      Contáctanos
-    </a>
+    <!-- how do we work -->
+    <HowDoWeWork />
+
+    <!-- why choose us -->
+    <WhyChooseUs />
+
+    <!-- cta -->
+    <Cta />
   </main>
 </Layout>

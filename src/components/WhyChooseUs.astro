@@ -1,0 +1,60 @@
+---
+import { Cpu, LifeBuoy, Puzzle, Users } from "@lucide/astro";
+import Card from "./ui/Card.astro";
+---
+
+<section class="mt-24 sm:mt-32">
+  <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900">
+    Por qué elegirnos
+  </h2>
+
+  <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10">
+    <div class="p-4 sm:p-0">
+      <div class="flex gap-4">
+        <Puzzle class="size-5 text-neutral-900 mt-1" />
+        <div>
+          <p class="font-medium text-neutral-900">Desarrollo a la medida</p>
+          <p class="mt-2 text-neutral-700">
+            No usamos plantillas ni soluciones genéricas.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-4 sm:p-0">
+      <div class="flex gap-4">
+        <Users class="size-5 text-neutral-900 mt-1" />
+        <div>
+          <p class="font-medium text-neutral-900">Trato directo</p>
+          <p class="mt-2 text-neutral-700">
+            Comunicación clara y sin intermediarios.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-4 sm:p-0">
+      <div class="flex gap-4">
+        <Cpu class="size-5 text-neutral-900 mt-1" />
+        <div>
+          <p class="font-medium text-neutral-900">Tecnología moderna</p>
+          <p class="mt-2 text-neutral-700">
+            Herramientas actuales, seguras y escalables.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-4 sm:p-0">
+      <div class="flex gap-4">
+        <LifeBuoy class="size-5 text-neutral-900 mt-1" />
+        <div>
+          <p class="font-medium text-neutral-900">Soporte y continuidad</p>
+          <p class="mt-2 text-neutral-700">
+            Acompañamiento después de la entrega si lo necesitas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

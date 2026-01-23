@@ -47,9 +47,9 @@
 
   .marquee-track {
     display: flex;
-    gap: 4rem; /* spacing between icons */
-    padding-right: 4rem; /* spacing between set A → set B */
-    animation: marquee 20s linear infinite;
+    gap: 4rem;
+    padding-right: 4rem;
+    animation: marquee 40s linear infinite;
     will-change: transform;
   }
 

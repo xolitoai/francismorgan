@@ -1,0 +1,45 @@
+---
+import Link from "./Link.astro";
+---
+
+<header
+  class="sticky top-0 z-50 w-full shadow-xs border-b border-neutral-200 bg-white/90 backdrop-blur"
+>
+  <div class="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+    <!-- Brand -->
+    <a
+      href="/"
+      class="text-lg font-semibold tracking-tight text-neutral-900 uppercase"
+    >
+      Francis Morgan
+    </a>
+
+    <!-- Navigation + CTA -->
+    <div class="flex items-center gap-6">
+      <nav class="hidden sm:flex items-center gap-6">
+        <a
+          href="#que-construimos"
+          class="text-neutral-600 transition hover:text-neutral-900"
+        >
+          Servicios
+        </a>
+        <a
+          href="#como-trabajamos"
+          class="text-neutral-600 transition hover:text-neutral-900"
+        >
+          Proceso
+        </a>
+        <a
+          href="#porque-elegirnos"
+          class="text-neutral-600 transition hover:text-neutral-900"
+        >
+          Por qué nosotros
+        </a>
+      </nav>
+
+      <div class="hidden sm:block">
+        <Link variant="primary"> Contáctanos </Link>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,4 +1,5 @@
 ---
+import Header from "../components/ui/Header.astro";
 import "../styles/global.css";
 ---
 
@@ -12,7 +13,13 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
   </head>
+
   <body>
+    <div
+      class="hidden lg:block fixed inset-0 -z-10 bg-[repeating-linear-gradient(315deg,rgba(0,0,0,0.04)_0,rgba(0,0,0,0.04)_1px,transparent_0,transparent_50%)] bg-size-[12px_12px]"
+    >
+    </div>
+    <Header />
     <slot />
   </body>
 </html>

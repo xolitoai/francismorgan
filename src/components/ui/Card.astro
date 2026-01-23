@@ -13,8 +13,8 @@ type Props = {
 
 const { variant = "plain", icon: Icon, title, content } = Astro.props as Props;
 
-const classes = clsx("p-6 rounded-lg transition", {
-  "border border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50":
+const classes = clsx("rounded-lg transition", {
+  "border p-6 border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50":
     variant === "bordered",
 });
 ---

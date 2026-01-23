@@ -1,0 +1,14 @@
+---
+type Props = {
+  as?: "h2" | "h3";
+};
+
+const { as = "h2" } = Astro.props as Props;
+const Tag = as;
+---
+
+<Tag
+  class="relative pl-4 text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-5 before:w-1 before:bg-indigo-600"
+>
+  <slot />
+</Tag>

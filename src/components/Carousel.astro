@@ -1,5 +1,8 @@
 ---
 const tech = [
+  "/carousel/contentful.svg",
+  "/carousel/express.svg",
+  "/carousel/nestjs.svg",
   "/carousel/javascript.svg",
   "/carousel/stripe.svg",
   "/carousel/astro.svg",
@@ -27,7 +30,7 @@ const tech = [
       <div class="marquee-track">
         {
           tech.map((src) => (
-            <img src={src} alt="" class="size-14 shrink-0" loading="lazy" />
+            <img src={src} alt={src} class="size-14 shrink-0" loading="lazy" />
           ))
         }
       </div>
@@ -36,7 +39,7 @@ const tech = [
       <div class="marquee-track" aria-hidden="true">
         {
           tech.map((src) => (
-            <img src={src} alt="" class="size-14 shrink-0" loading="lazy" />
+            <img src={src} alt={src} class="size-14 shrink-0" loading="lazy" />
           ))
         }
       </div>

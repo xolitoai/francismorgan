@@ -8,6 +8,7 @@ const projects = [
   {
     id: "xolito",
     title: "Xolito",
+    href: "/work/xolito",
     description:
       "Plataforma de finanzas personales vía WhatsApp con dashboard web.",
     highlights: [
@@ -90,7 +91,7 @@ const projects = [
               ))}
             </ul>
             <div class="mt-6">
-              <Link href="/work" variant="link" size="small">
+              <Link href={project.href} variant="link" size="small">
                 Ver mas
               </Link>
             </div>

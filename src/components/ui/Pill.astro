@@ -1,0 +1,24 @@
+---
+import clsx from "clsx";
+
+type Variant = "neutral" | "indigo";
+
+type Props = {
+  label: string;
+  variant?: Variant;
+};
+
+const { label, variant = "neutral" } = Astro.props as Props;
+
+const classes = clsx(
+  "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium",
+  {
+    "bg-neutral-100 text-neutral-700": variant === "neutral",
+    "bg-indigo-600/5 text-indigo-700": variant === "indigo",
+  },
+);
+---
+
+<span class={classes}>
+  {label}
+</span>

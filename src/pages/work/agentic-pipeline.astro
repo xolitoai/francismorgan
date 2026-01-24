@@ -4,6 +4,7 @@ import Title from "../../components/ui/Title.astro";
 import Pill from "../../components/ui/Pill.astro";
 import Link from "../../components/ui/Link.astro";
 import BulletPoint from "../../components/ui/BulletPoint.astro";
+import AgenticDiagram from "../../components/ui/AgenticDiagram.astro";
 ---
 
 <Layout>
@@ -124,6 +125,10 @@ import BulletPoint from "../../components/ui/BulletPoint.astro";
             Los agentes se utilizan únicamente donde se requiere razonamiento.
             No reemplazan las etapas determinísticas, sino que las orquestan.
           </p>
+
+          <div class="mt-8">
+            <AgenticDiagram />
+          </div>
 
           <ul class="mt-6 space-y-3">
             <li class="flex items-center gap-2">

@@ -1,7 +1,71 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Title from "../components/ui/Title.astro";
+import { Minus } from "@lucide/astro";
+import Pill from "../components/ui/Pill.astro";
 ---
 
 <Layout>
-  <section>work</section>
+  <main class="px-6 py-20 sm:py-24 max-w-4xl mx-auto">
+    <!-- Intro -->
+    <section>
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-neutral-900"
+      >
+        Proyectos
+      </h1>
+
+      <p class="mt-4 max-w-2xl text-base sm:text-lg text-neutral-600">
+        Una selección de proyectos donde he diseñado y desarrollado soluciones
+        reales para problemas reales.
+      </p>
+    </section>
+
+    <!-- Projects list -->
+    <section class="mt-24 sm:mt-32 space-y-16">
+      <!-- Project -->
+      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
+        <Title>Xolito</Title>
+
+        <p class="mt-4 max-w-2xl text-neutral-700">
+          Plataforma de finanzas personales vía WhatsApp con un dashboard web
+          para análisis, control y automatización.
+        </p>
+
+        <ul class="mt-6 space-y-2 text-sm text-neutral-700">
+          <li class="flex items-center gap-2">
+            <Minus class="text-indigo-600 size-3.5" />
+            <span>Procesamiento de lenguaje natural</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <Minus class="text-indigo-600 size-3.5" />
+            <span>Integración con WhatsApp</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <Minus class="text-indigo-600 size-3.5" />
+            <span>Arquitectura serverless</span>
+          </li>
+        </ul>
+
+        <div class="mt-6 flex flex-wrap gap-2">
+          <Pill label="Next.js" />
+          <Pill label="Vercel" />
+          <Pill label="PostgreSQL" />
+          <Pill label="Stripe" />
+          <Pill label="Hono" />
+          <Pill label="Whatsapp API" />
+        </div>
+        <div class="mt-6">
+          <a
+            href="/work"
+            class="inline-flex items-center gap-2 text-sm font-medium"
+          >
+            <span class="text-indigo-600 hover:text-indigo-500">Ver más</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Repeat for next projects -->
+    </section>
+  </main>
 </Layout>

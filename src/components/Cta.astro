@@ -1,4 +1,5 @@
 ---
+import ContactModal from "./react/contact-modal";
 import Link from "./ui/Link.astro";
 ---
 
@@ -15,7 +16,8 @@ import Link from "./ui/Link.astro";
     </p>
 
     <div class="mt-8">
-      <Link variant="primary">Contáctanos</Link>
+      <!-- <Link variant="primary">Contáctanos</Link> -->
+      <ContactModal client:load />
     </div>
   </div>
 </section>

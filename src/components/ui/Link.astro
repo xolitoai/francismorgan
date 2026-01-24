@@ -1,22 +1,42 @@
 ---
 import clsx from "clsx";
 
-type Variant = "primary" | "secondary";
+type Variant = "primary" | "secondary" | "link";
+type Size = "small" | "base" | "large";
 
 type Props = {
   href?: string;
   variant?: Variant;
+  size?: Size;
 };
 
-const { href = "#", variant = "primary" } = Astro.props as Props;
+const { href = "#", variant = "primary", size = "base" } = Astro.props as Props;
 
-const classes = clsx("inline-block cursor-pointer transition rounded-xl", {
-  "bg-indigo-600 text-white px-6 py-3 hover:bg-indigo-500":
+const baseClasses = "cursor-pointer transition";
+
+const variantClasses = clsx({
+  "inline-block rounded-xl bg-indigo-600 text-white hover:bg-indigo-500":
     variant === "primary",
 
-  "text-neutral-900 underline underline-offset-4 hover:text-neutral-700":
+  "inline-block text-neutral-900 underline underline-offset-4 hover:text-neutral-700":
     variant === "secondary",
+
+  "inline-flex items-center gap-2 font-medium text-indigo-600 hover:text-indigo-500":
+    variant === "link",
 });
+
+const sizeClasses = clsx({
+  /* primary sizes */
+  "px-4 py-2 text-sm": variant === "primary" && size === "small",
+  "px-5 py-2.5 text-base": variant === "primary" && size === "base",
+  "px-7 py-3.5 text-lg": variant === "primary" && size === "large",
+
+  /* non-primary sizes */
+  "text-sm": variant !== "primary" && size !== "large",
+  "text-base": variant !== "primary" && size === "large",
+});
+
+const classes = clsx(baseClasses, variantClasses, sizeClasses);
 ---
 
 <a href={href} class={classes}>

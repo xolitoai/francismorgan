@@ -1,0 +1,151 @@
+---
+import { Minus } from "@lucide/astro";
+import Layout from "../../layouts/Layout.astro";
+import Title from "../../components/ui/Title.astro";
+import Pill from "../../components/ui/Pill.astro";
+import Link from "../../components/ui/Link.astro";
+---
+
+<Layout>
+  <main class="px-6 py-20 sm:py-24 max-w-4xl mx-auto">
+    <!-- Intro -->
+    <section>
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-neutral-900"
+      >
+        Xolito
+      </h1>
+
+      <p class="mt-4 max-w-2xl text-base sm:text-lg text-neutral-600">
+        Plataforma de finanzas personales vía WhatsApp con dashboard web para
+        control, análisis y automatización.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-2">
+        <Pill label="Next.js" />
+        <Pill label="Vercel" />
+        <Pill label="PostgreSQL" />
+        <Pill label="Stripe" />
+        <Pill label="Hono" />
+        <Pill label="WhatsApp API" variant="indigo" />
+      </div>
+    </section>
+
+    <!-- Case study -->
+    <section class="mt-24 sm:mt-32 space-y-16">
+      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
+        <Title>Contexto</Title>
+        <p class="mt-4 text-neutral-700">
+          Las personas no registran sus gastos por fricción: aplicaciones
+          complejas, flujos largos y falta de constancia. WhatsApp es una
+          herramienta que ya usan todos los días.
+        </p>
+      </article>
+
+      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
+        <Title>El problema</Title>
+        <ul class="mt-4 space-y-2">
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700">Registro manual poco práctico</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700"
+              >Falta de recordatorios contextuales</span
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700"
+              >Poca visibilidad de hábitos financieros</span
+            >
+          </li>
+        </ul>
+      </article>
+
+      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
+        <Title>La solución</Title>
+        <p class="mt-4 text-neutral-700">
+          Un asistente conversacional que permite registrar gastos e ingresos
+          usando lenguaje natural, complementado por un dashboard web para
+          análisis y reportes.
+        </p>
+      </article>
+
+      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
+        <Title>Arquitectura</Title>
+        <ul class="mt-4 space-y-2">
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700">WhatsApp como canal principal</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700"
+              >API serverless para procesamiento de mensajes</span
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700"
+              >Base de datos PostgreSQL para persistencia</span
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700"
+              >Dashboard web construido con Next.js</span
+            >
+          </li>
+        </ul>
+      </article>
+
+      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
+        <Title>Resultados</Title>
+        <ul class="mt-4 space-y-2">
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700">Registro inmediato sin fricción</span
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700"
+              >Mayor constancia en el seguimiento</span
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700"
+              >Información clara para tomar decisiones</span
+            >
+          </li>
+        </ul>
+      </article>
+
+      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
+        <Title>Aprendizajes</Title>
+        <ul class="mt-4 space-y-2">
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700">
+              Diseñar alrededor de hábitos existentes reduce fricción y mejora
+              adopción
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700">
+              La simplicidad del canal es clave para productos financieros
+            </span>
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="mt-24">
+      <Link href="/work" variant="link">Volver a trabajo</Link>
+    </section>
+  </main>
+</Layout>

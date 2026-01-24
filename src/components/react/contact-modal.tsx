@@ -22,6 +22,8 @@ type Props = {
 type FormValues = {
   name: string;
   email: string;
+  company: string;
+  website: string;
   message: string;
 };
 
@@ -128,6 +130,20 @@ export default function ContactModal({
                     {errors.email.message}
                   </p>
                 )}
+              </div>
+              <div>
+                <Input
+                  {...register("website", {})}
+                  placeholder="Sitio web"
+                  className={inputClasses}
+                />
+              </div>
+              <div>
+                <Input
+                  {...register("company", {})}
+                  placeholder="Compañia"
+                  className={inputClasses}
+                />
               </div>
 
               <div>

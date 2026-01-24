@@ -1,4 +1,5 @@
 import { Tabs, TabList, Tab, TabPanel } from "react-aria-components";
+import { BulletPoint } from "./bullet-point";
 
 type WorkItem = {
   id: string;
@@ -54,6 +55,7 @@ export function WorkTabs({ title, items }: WorkTabsProps) {
                 <ul className="mt-6 space-y-2 text-sm">
                   {item.highlights.map((highlight) => (
                     <li key={highlight} className="flex items-center gap-2">
+                      <BulletPoint />
                       <span className="text-neutral-500">{highlight}</span>
                     </li>
                   ))}

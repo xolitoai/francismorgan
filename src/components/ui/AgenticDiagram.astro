@@ -1,81 +1,47 @@
-<svg
-  viewBox="0 0 800 520"
-  class="w-full max-w-3xl mx-auto"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <style>
-    .box {
-      fill: #fff;
-      stroke: #e5e7eb;
-      stroke-width: 2;
-      rx: 12;
-    }
-    .agent {
-      stroke: #6366f1;
-    }
-    .text {
-      fill: #111827;
-      font-size: 14px;
-      font-family: system-ui;
-    }
-    .arrow {
-      stroke: #9ca3af;
-      stroke-width: 2;
-      marker-end: url(#arrow);
-    }
-  </style>
+<div class="relative mx-auto max-w-3xl">
+  <!-- Section labels -->
+  <div class="grid grid-cols-2 text-sm text-neutral-500 mb-4">
+    <span>Etapas determinísticas</span>
+    <span class="text-right">Razonamiento agentic</span>
+  </div>
 
-  <defs>
-    <marker
-      id="arrow"
-      viewBox="0 0 10 10"
-      refX="5"
-      refY="5"
-      markerWidth="6"
-      markerHeight="6"
-      orient="auto-start-reverse"
-    >
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9ca3af"></path>
-    </marker>
-  </defs>
+  <div class="grid grid-cols-2 gap-12">
+    <!-- Left column: deterministic -->
+    <div class="space-y-4 relative">
+      <div class="pipeline-box bg-neutral-50">Ingestión</div>
+      <div class="pipeline-box bg-neutral-50">OCR</div>
+      <div class="pipeline-box bg-neutral-50">Layout y orden de lectura</div>
+      <div class="pipeline-box bg-neutral-50">Comprensión del documento</div>
 
-  <!-- Boxes -->
-  <rect x="40" y="40" width="240" height="48" class="box"></rect>
-  <text x="160" y="70" text-anchor="middle" class="text">Ingestión</text>
+      <!-- vertical line -->
+      <div
+        class="absolute left-1/2 top-12 bottom-12 w-px bg-neutral-300 -translate-x-1/2"
+      >
+      </div>
+    </div>
 
-  <rect x="40" y="110" width="240" height="48" class="box"></rect>
-  <text x="160" y="140" text-anchor="middle" class="text">OCR</text>
+    <!-- Right column: agentic -->
+    <div class="space-y-4 relative">
+      <div class="pipeline-box border-indigo-500 bg-indigo-50">
+        <div class="font-medium">Extracción agentic</div>
+        <div class="mt-1 text-xs text-indigo-600">
+          plan · extraer · validar · reintentar
+        </div>
+      </div>
 
-  <rect x="40" y="180" width="240" height="48" class="box"></rect>
-  <text x="160" y="210" text-anchor="middle" class="text">Layout y orden</text>
+      <div class="pipeline-box">Salida estructurada (JSON)</div>
+      <div class="pipeline-box">Artefactos para RAG</div>
 
-  <rect x="40" y="250" width="240" height="48" class="box"></rect>
-  <text x="160" y="280" text-anchor="middle" class="text">Comprensión</text>
+      <!-- loop -->
+      <div class="absolute -top-6 right-2 text-xs text-neutral-400">
+        ↺ validación
+      </div>
+    </div>
+  </div>
+</div>
 
-  <rect x="360" y="180" width="300" height="72" class="box agent"></rect>
-  <text x="510" y="215" text-anchor="middle" class="text">
-    Extracción agentic
-  </text>
-
-  <rect x="360" y="300" width="300" height="48" class="box"></rect>
-  <text x="510" y="330" text-anchor="middle" class="text">
-    Salida estructurada
-  </text>
-
-  <rect x="360" y="370" width="300" height="48" class="box"></rect>
-  <text x="510" y="400" text-anchor="middle" class="text">
-    Artefactos RAG
-  </text>
-
-  <!-- Arrows -->
-  <line x1="160" y1="88" x2="160" y2="110" class="arrow"></line>
-  <line x1="160" y1="158" x2="160" y2="180" class="arrow"></line>
-  <line x1="160" y1="228" x2="160" y2="250" class="arrow"></line>
-  <line x1="280" y1="274" x2="360" y2="216" class="arrow"></line>
-  <line x1="510" y1="252" x2="510" y2="300" class="arrow"></line>
-  <line x1="510" y1="348" x2="510" y2="370" class="arrow"></line>
-
-  <!-- Agentic loop -->
-  <path d="M 660 216 C 720 216 720 140 510 140" fill="none" class="arrow"
-  ></path>
-</svg>
+<style>
+  .pipeline-box {
+    @apply rounded-xl border border-neutral-200 px-4 py-3 text-sm text-neutral-800 bg-white shadow-sm;
+  }
+</style>

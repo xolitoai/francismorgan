@@ -17,6 +17,7 @@
     "astro": "^5.16.14",
     "clsx": "^2.1.1",
     "react": "^19.2.3",
+    "react-aria-components": "^1.14.0",
     "react-dom": "^19.2.3",
     "tailwindcss": "^4.1.18"
   }

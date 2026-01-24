@@ -84,10 +84,10 @@ export default function ContactModal({
       <ModalOverlay
         isOpen={open}
         onOpenChange={setOpen}
-        className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+        className="fixed inset-0 z-50 bg-black/40 md:flex md:items-center md:justify-center"
       >
-        <Modal className="w-full max-w-md outline-none">
-          <Dialog className="rounded-xl bg-white p-6 shadow outline-none">
+        <Modal className="w-full h-full md:h-auto md:max-w-md outline-none">
+          <Dialog className="h-full lg:h-auto md:rounded-xl bg-white p-6 shadow outline-none">
             <Heading className="text-lg font-semibold text-neutral-900">
               Hablemos de tu proyecto
             </Heading>

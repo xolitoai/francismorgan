@@ -1,5 +1,6 @@
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import clsx from "clsx";
+import { useForm } from "react-hook-form";
 import {
   Modal,
   ModalOverlay,
@@ -19,21 +20,32 @@ type Props = {
   size?: Size;
 };
 
+type FormValues = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 export default function ContactModal({
   variant = "primary",
   size = "base",
 }: Props) {
   const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setLoading(true);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<FormValues>();
 
-    const formData = new FormData(e.currentTarget);
-    await fetch("/api/contact", { method: "POST", body: formData });
+  async function onSubmit(data: FormValues) {
+    await fetch("/api/contact", {
+      method: "POST",
+      body: new URLSearchParams(data),
+    });
 
-    setLoading(false);
+    reset();
     setOpen(false);
   }
 
@@ -50,12 +62,10 @@ export default function ContactModal({
         variant === "link",
     },
     {
-      /* primary sizes */
       "px-4 py-2 text-sm": variant === "primary" && size === "small",
       "px-5 py-2.5 text-base": variant === "primary" && size === "base",
       "px-7 py-3.5 text-lg": variant === "primary" && size === "large",
 
-      /* non-primary sizes */
       "text-sm": variant !== "primary" && size !== "large",
       "text-base": variant !== "primary" && size === "large",
     },
@@ -78,28 +88,70 @@ export default function ContactModal({
               Hablemos de tu proyecto
             </Heading>
 
-            <form onSubmit={onSubmit} className="mt-4 space-y-4">
-              <TextField name="name" isRequired>
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="mt-4 space-y-4"
+              noValidate
+            >
+              <div>
                 <Input
+                  {...register("name", {
+                    required: "El nombre es obligatorio",
+                  })}
                   placeholder="Nombre"
-                  className="w-full rounded-lg border px-3 py-2"
+                  className={clsx(
+                    "w-full rounded-lg border px-3 py-2",
+                    errors.name && "border-red-500",
+                  )}
                 />
-              </TextField>
+                {errors.name && (
+                  <p className="mt-1 text-sm text-red-600">
+                    {errors.name.message}
+                  </p>
+                )}
+              </div>
 
-              <TextField name="email" type="email" isRequired>
+              <div>
                 <Input
+                  {...register("email", {
+                    required: "El email es obligatorio",
+                    pattern: {
+                      value: /\S+@\S+\.\S+/,
+                      message: "Email inválido",
+                    },
+                  })}
+                  type="email"
                   placeholder="Email"
-                  className="w-full rounded-lg border px-3 py-2"
+                  className={clsx(
+                    "w-full rounded-lg border px-3 py-2",
+                    errors.email && "border-red-500",
+                  )}
                 />
-              </TextField>
+                {errors.email && (
+                  <p className="mt-1 text-sm text-red-600">
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
 
-              <TextField name="message" isRequired>
+              <div>
                 <TextArea
+                  {...register("message", {
+                    required: "Cuéntanos sobre tu proyecto",
+                  })}
                   rows={4}
                   placeholder="Cuéntanos sobre tu proyecto"
-                  className="w-full rounded-lg border px-3 py-2"
+                  className={clsx(
+                    "w-full rounded-lg border px-3 py-2",
+                    errors.message && "border-red-500",
+                  )}
                 />
-              </TextField>
+                {errors.message && (
+                  <p className="mt-1 text-sm text-red-600">
+                    {errors.message.message}
+                  </p>
+                )}
+              </div>
 
               <div className="flex justify-end gap-3 pt-2">
                 <Button
@@ -112,10 +164,10 @@ export default function ContactModal({
 
                 <Button
                   type="submit"
-                  isDisabled={loading}
+                  isDisabled={isSubmitting}
                   className="rounded-lg bg-indigo-600 px-4 py-2 text-white disabled:opacity-50"
                 >
-                  {loading ? "Enviando…" : "Enviar"}
+                  {isSubmitting ? "Enviando…" : "Enviar"}
                 </Button>
               </div>
             </form>

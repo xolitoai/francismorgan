@@ -1,5 +1,207 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Title from "../../components/ui/Title.astro";
+import Pill from "../../components/ui/Pill.astro";
+import Link from "../../components/ui/Link.astro";
+import BulletPoint from "../../components/ui/BulletPoint.astro";
 ---
 
-<Layout />
+<Layout>
+  <main class="px-6 py-20 sm:py-24 max-w-4xl mx-auto">
+    <!-- Intro -->
+    <section>
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-neutral-900"
+      >
+        Agentic Pipelines for Document Processing
+      </h1>
+
+      <p class="mt-4 max-w-2xl text-base sm:text-lg text-neutral-600">
+        From OCR to agentic document understanding and extraction, enabling
+        resilient pipelines for structured data and RAG.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-2">
+        <Pill label="Document AI" />
+        <Pill label="OCR" />
+        <Pill label="Agentic Systems" />
+        <Pill label="LLMs" />
+        <Pill label="RAG" />
+        <Pill label="AWS" />
+      </div>
+    </section>
+
+    <!-- Case study content -->
+    <section class="mt-24 sm:mt-32 space-y-20">
+      <div class="rounded-xl bg-white shadow px-8 py-16 sm:px-12 space-y-20">
+        <section>
+          <Title>Contexto</Title>
+          <p class="mt-4 text-neutral-700">
+            Document processing has traditionally relied on static pipelines:
+            OCR, rules, and brittle post-processing. As document layouts,
+            formats, and intents diversify, these systems fail to generalize.
+          </p>
+        </section>
+
+        <section>
+          <Title>El problema</Title>
+          <ul class="mt-4 space-y-2">
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                OCR alone produces unstructured, noisy text
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                Layout and reading order vary wildly across documents
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                Rule-based extraction breaks on unseen formats
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <Title>La solución</Title>
+          <p class="mt-4 text-neutral-700">
+            A layered pipeline that combines deterministic document processing
+            (OCR, layout detection) with agentic reasoning for understanding,
+            extraction, and validation.
+          </p>
+        </section>
+
+        <section>
+          <Title>Pipeline</Title>
+          <ul class="mt-6 space-y-3">
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                <strong>Ingestión.</strong> PDFs and images are normalized and split
+                into pages.
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                <strong>OCR.</strong> Text and bounding boxes extracted using multiple
+                OCR engines.
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                <strong>Layout & orden de lectura.</strong> Structural blocks inferred
+                deterministically.
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                <strong>Comprensión del documento.</strong> Sections, tables and candidate
+                fields identified.
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                <strong>Extracción agentic.</strong> Agents reason, retry, and validate
+                missing or conflicting fields.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <Title>Uso de agentes</Title>
+          <p class="mt-4 text-neutral-700">
+            Agents are introduced only where reasoning is required. They do not
+            replace deterministic stages, but orchestrate them.
+          </p>
+
+          <ul class="mt-6 space-y-3">
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                <strong>Field discovery.</strong> Decide what information is relevant
+                for a given document type.
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                <strong>Self-validation.</strong> Detect missing or inconsistent values
+                and retry extraction.
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                <strong>RAG preparation.</strong> Produce semantically meaningful,
+                labeled chunks.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <Title>Decisiones clave</Title>
+          <ul class="mt-4 space-y-3">
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                <strong>Agentic where necessary.</strong> OCR and layout remain deterministic.
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                <strong>Validation over generation.</strong> Outputs must be schema-conformant.
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                <strong>Composable pipeline.</strong> Each stage is independently
+                replaceable.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <Title>Resultados</Title>
+          <ul class="mt-4 space-y-2">
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                Robust extraction across heterogeneous documents
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                Reduced reliance on brittle, hand-written rules
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <BulletPoint />
+              <span class="text-neutral-700">
+                RAG-ready outputs with preserved structure and metadata
+              </span>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <section class="mt-24">
+      <Link href="/work" variant="link">Volver a trabajo</Link>
+    </section>
+  </main>
+</Layout>

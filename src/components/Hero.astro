@@ -1,5 +1,5 @@
 ---
-import Link from "./ui/Link.astro";
+import ContactModal from "./react/contact-modal";
 ---
 
 <section class="text-center">
@@ -17,6 +17,6 @@ import Link from "./ui/Link.astro";
   <div
     class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6"
   >
-    <Link variant="primary">Contáctanos</Link>
+    <ContactModal client:load />
   </div>
 </section>

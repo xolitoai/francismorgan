@@ -1,4 +1,5 @@
 ---
+import ContactModal from "../react/contact-modal";
 import Link from "./Link.astro";
 ---
 
@@ -32,7 +33,7 @@ import Link from "./Link.astro";
       </nav>
 
       <div class="hidden sm:block">
-        <Link variant="primary" size="small"> Contáctanos </Link>
+        <ContactModal client:load />
       </div>
     </div>
   </div>

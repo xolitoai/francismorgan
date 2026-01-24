@@ -5,7 +5,7 @@ import WorkItem from "../components/ui/WorkItem.astro";
 
 <Layout>
   <main class="px-6 py-20 sm:py-24 max-w-4xl mx-auto">
-    <!-- Intro -->
+    <!-- introduction -->
     <section>
       <h1
         class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-neutral-900"
@@ -19,11 +19,11 @@ import WorkItem from "../components/ui/WorkItem.astro";
       </p>
     </section>
 
-    <!-- Work list -->
+    <!-- work list -->
     <section class="mt-24 sm:mt-32 space-y-16">
-      <!-- Project -->
       <WorkItem
         title="Xolito"
+        href="/work/xolito"
         description="Plataforma de finanzas personales vía WhatsApp con dashboard web para análisis, control y automatización."
         highlights={[
           "Procesamiento de lenguaje natural",
@@ -42,6 +42,7 @@ import WorkItem from "../components/ui/WorkItem.astro";
 
       <WorkItem
         title="Agentic pipelines para documentos"
+        href="/work/agentic-pipelines"
         description="Sistemas agentic para procesar, clasificar y validar documentos de forma automática."
         highlights={[
           "Pipelines multi-step con agentes",
@@ -49,11 +50,11 @@ import WorkItem from "../components/ui/WorkItem.astro";
           "Reducción significativa de trabajo manual",
         ]}
         stack={["Node.js", "Python", "OpenAI", "PostgreSQL", "AWS"]}
-        href="/work/agentic-pipelines"
       />
 
       <WorkItem
         title="Búsqueda de alto rendimiento con PostgreSQL"
+        href="/work/postgres-search"
         description="Implementación de búsqueda avanzada ultra rápida usando capacidades nativas de PostgreSQL."
         highlights={[
           "Full-text search optimizado",
@@ -61,7 +62,6 @@ import WorkItem from "../components/ui/WorkItem.astro";
           "Sin dependencias externas",
         ]}
         stack={["PostgreSQL", "SQL", "Next.js", "Vercel"]}
-        href="/work/postgres-search"
       />
     </section>
   </main>

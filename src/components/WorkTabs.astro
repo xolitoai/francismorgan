@@ -1,6 +1,7 @@
 ---
 import { ArrowRight, Minus } from "@lucide/astro";
 import Title from "./ui/Title.astro";
+import Link from "./ui/Link.astro";
 
 const projects = [
   {
@@ -40,13 +41,12 @@ const projects = [
 ---
 
 <section class="mt-24 sm:mt-32" data-work-tabs>
-  <Title>Proyectos</Title>
+  <Title>Nuestro trabajo</Title>
 
   <div
     class="mt-10 p-8 sm:p-10 rounded-xl bg-white/90 shadow grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-10"
   >
-    <!-- Tabs (left) -->
-    <nav class="space-y-2" role="tablist" aria-label="Proyectos">
+    <nav class="space-y-2" role="tablist" aria-label="Trabajo">
       {
         projects.map((project, idx) => (
           <button
@@ -64,7 +64,6 @@ const projects = [
       }
     </nav>
 
-    <!-- Content (right) -->
     <div>
       {
         projects.map((project, idx) => (
@@ -90,14 +89,9 @@ const projects = [
               ))}
             </ul>
             <div class="mt-6">
-              <a
-                href="/work"
-                class="inline-flex items-center gap-2 text-sm font-medium"
-              >
-                <span class="text-indigo-600 hover:text-indigo-500">
-                  Ver más
-                </span>
-              </a>
+              <Link href="/work" variant="link" size="small">
+                Ver mas
+              </Link>
             </div>
           </div>
         ))

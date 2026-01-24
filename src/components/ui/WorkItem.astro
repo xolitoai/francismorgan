@@ -4,6 +4,7 @@ import { Minus } from "@lucide/astro";
 import Title from "../ui/Title.astro";
 import Pill from "../ui/Pill.astro";
 import Link from "./Link.astro";
+import BulletPoint from "./BulletPoint.astro";
 
 type Props = {
   title: string;
@@ -35,7 +36,7 @@ const articleClass = clsx("rounded-xl bg-white p-8 sm:p-10 shadow");
     {
       highlights.map((item) => (
         <li class="flex items-center gap-2">
-          <Minus class="size-3.5 text-indigo-600" />
+          <BulletPoint />
           <span>{item}</span>
         </li>
       ))

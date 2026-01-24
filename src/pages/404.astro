@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Link from "../components/ui/Link.astro";
+---
+
+<Layout>
+  <main class="mt-10 flex items-center justify-center">
+    <div class="max-w-4xl w-full">
+      <div class="rounded-xl bg-white shadow px-8 py-16 sm:px-12">
+        <section class="max-w-xl mx-auto">
+          <p class="text-sm font-medium text-indigo-600">404</p>
+
+          <h1
+            class="mt-4 text-3xl sm:text-4xl font-black tracking-tight text-neutral-900"
+          >
+            Esta página no existe
+          </h1>
+
+          <p class="mt-4 text-neutral-600">
+            El enlace que intentaste abrir no apunta a ningún recurso válido.
+            Puede que haya sido movido o eliminado.
+          </p>
+
+          <div class="mt-8 flex items-center gap-10">
+            <Link href="/" variant="primary">Ir al inicio</Link>
+            <Link href="/work" variant="link">Ver proyectos</Link>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</Layout>

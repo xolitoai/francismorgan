@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import Title from "../../components/ui/Title.astro";
 import Pill from "../../components/ui/Pill.astro";
 import Link from "../../components/ui/Link.astro";
+import BulletPoint from "../../components/ui/BulletPoint.astro";
 ---
 
 <Layout>
@@ -27,8 +28,8 @@ import Link from "../../components/ui/Link.astro";
         <Pill label="Serverless" />
         <Pill label="PostgreSQL" />
         <Pill label="Stripe" />
-        <Pill label="WhatsApp API" variant="indigo" />
-        <Pill label="AI / LLMs" variant="indigo" />
+        <Pill label="WhatsApp API" />
+        <Pill label="AI / LLMs" />
       </div>
     </section>
 
@@ -49,19 +50,19 @@ import Link from "../../components/ui/Link.astro";
           <Title>El problema</Title>
           <ul class="mt-4 space-y-2">
             <li class="flex items-center gap-2">
-              <Minus class="size-3.5 text-indigo-600" />
+              <BulletPoint />
               <span class="text-neutral-700">
                 Registrar gastos requiere demasiado esfuerzo
               </span>
             </li>
             <li class="flex items-center gap-2">
-              <Minus class="size-3.5 text-indigo-600" />
+              <BulletPoint />
               <span class="text-neutral-700">
                 Los recordatorios no están ligados al contexto real
               </span>
             </li>
             <li class="flex items-center gap-2">
-              <Minus class="size-3.5 text-indigo-600" />
+              <BulletPoint />
               <span class="text-neutral-700">
                 Los datos existen, pero no generan claridad
               </span>
@@ -147,24 +148,24 @@ import Link from "../../components/ui/Link.astro";
           </p>
 
           <ul class="mt-6 space-y-3">
-            <li class="flex items-start gap-2">
-              <Minus class="mt-1 size-3.5 text-indigo-600" />
+            <li class="flex items-center gap-2">
+              <BulletPoint />
               <span class="text-neutral-700">
                 <strong>Clasificación de intención.</strong>
                 Identifica si un mensaje es un gasto, ingreso, recordatorio, consulta
                 o desconocido.
               </span>
             </li>
-            <li class="flex items-start gap-2">
-              <Minus class="mt-1 size-3.5 text-indigo-600" />
+            <li class="flex items-center gap-2">
+              <BulletPoint />
               <span class="text-neutral-700">
                 <strong>Extracción estructurada.</strong>
                 Convierte texto libre en campos explícitos como monto, concepto y
                 fecha.
               </span>
             </li>
-            <li class="flex items-start gap-2">
-              <Minus class="mt-1 size-3.5 text-indigo-600" />
+            <li class="flex items-center gap-2">
+              <BulletPoint />
               <span class="text-neutral-700">
                 <strong>Validación estricta.</strong>
                 Si la interpretación es incompleta o ambigua, el mensaje se rechaza.
@@ -176,22 +177,22 @@ import Link from "../../components/ui/Link.astro";
         <section>
           <Title>Decisiones clave</Title>
           <ul class="mt-4 space-y-3">
-            <li class="flex items-start gap-2">
-              <Minus class="mt-1 size-3.5 text-indigo-600" />
+            <li class="flex items-center gap-2">
+              <BulletPoint />
               <span class="text-neutral-700">
                 <strong>Procesamiento sin estado.</strong>
                 Cada mensaje debe ser entendible por sí solo para evitar ambigüedad.
               </span>
             </li>
-            <li class="flex items-start gap-2">
-              <Minus class="mt-1 size-3.5 text-indigo-600" />
+            <li class="flex items-center gap-2">
+              <BulletPoint />
               <span class="text-neutral-700">
                 <strong>Confiabilidad sobre “magia”.</strong>
                 En datos financieros, si no hay certeza, no se ejecuta.
               </span>
             </li>
-            <li class="flex items-start gap-2">
-              <Minus class="mt-1 size-3.5 text-indigo-600" />
+            <li class="flex items-center gap-2">
+              <BulletPoint />
               <span class="text-neutral-700">
                 <strong>Separación de responsabilidades.</strong>
                 Captura por chat, análisis en web.
@@ -215,20 +216,20 @@ import Link from "../../components/ui/Link.astro";
           <Title>Resultados</Title>
           <ul class="mt-4 space-y-2">
             <li class="flex items-center gap-2">
-              <Minus class="size-3.5 text-indigo-600" />
+              <BulletPoint />
               <span class="text-neutral-700">
                 Registro de gastos en segundos, sin onboarding
               </span>
             </li>
             <li class="flex items-center gap-2">
-              <Minus class="size-3.5 text-indigo-600" />
+              <BulletPoint />
               <span class="text-neutral-700">
                 Mayor constancia al usar un canal ya integrado en la rutina
                 diaria
               </span>
             </li>
             <li class="flex items-center gap-2">
-              <Minus class="size-3.5 text-indigo-600" />
+              <BulletPoint />
               <span class="text-neutral-700">
                 Menos errores gracias a validaciones estrictas sobre la IA
               </span>

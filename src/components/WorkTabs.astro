@@ -2,6 +2,7 @@
 import { ArrowRight, Minus } from "@lucide/astro";
 import Title from "./ui/Title.astro";
 import Link from "./ui/Link.astro";
+import BulletPoint from "./ui/BulletPoint.astro";
 
 const projects = [
   {
@@ -83,7 +84,7 @@ const projects = [
             <ul class="mt-6 space-y-2 text-sm ">
               {project.highlights.map((item) => (
                 <li class="flex items-center gap-2">
-                  <Minus class="text-indigo-600 size-3.5" />
+                  <BulletPoint />
                   <span class="text-neutral-700">{item}</span>
                 </li>
               ))}

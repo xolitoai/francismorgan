@@ -13,12 +13,12 @@ import BulletPoint from "../../components/ui/BulletPoint.astro";
       <h1
         class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-neutral-900"
       >
-        Agentic Pipelines for Document Processing
+        Pipelines agentic para procesamiento de documentos
       </h1>
 
       <p class="mt-4 max-w-2xl text-base sm:text-lg text-neutral-600">
-        From OCR to agentic document understanding and extraction, enabling
-        resilient pipelines for structured data and RAG.
+        De OCR a comprensión y extracción agentic de documentos, produciendo
+        datos estructurados y listos para RAG.
       </p>
 
       <div class="mt-6 flex flex-wrap gap-2">
@@ -37,9 +37,10 @@ import BulletPoint from "../../components/ui/BulletPoint.astro";
         <section>
           <Title>Contexto</Title>
           <p class="mt-4 text-neutral-700">
-            Document processing has traditionally relied on static pipelines:
-            OCR, rules, and brittle post-processing. As document layouts,
-            formats, and intents diversify, these systems fail to generalize.
+            El procesamiento de documentos tradicional se basa en pipelines
+            estáticos: OCR, reglas y postprocesamiento frágil. A medida que los
+            documentos varían en formato, estructura e intención, estos sistemas
+            dejan de escalar.
           </p>
         </section>
 
@@ -49,19 +50,19 @@ import BulletPoint from "../../components/ui/BulletPoint.astro";
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                OCR alone produces unstructured, noisy text
+                El OCR produce texto ruidoso y sin estructura
               </span>
             </li>
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                Layout and reading order vary wildly across documents
+                El layout y el orden de lectura cambian entre documentos
               </span>
             </li>
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                Rule-based extraction breaks on unseen formats
+                La extracción basada en reglas no generaliza
               </span>
             </li>
           </ul>
@@ -70,9 +71,9 @@ import BulletPoint from "../../components/ui/BulletPoint.astro";
         <section>
           <Title>La solución</Title>
           <p class="mt-4 text-neutral-700">
-            A layered pipeline that combines deterministic document processing
-            (OCR, layout detection) with agentic reasoning for understanding,
-            extraction, and validation.
+            Un pipeline por capas que combina etapas determinísticas (OCR,
+            detección de layout) con razonamiento agentic para comprensión,
+            extracción y validación.
           </p>
         </section>
 
@@ -82,36 +83,36 @@ import BulletPoint from "../../components/ui/BulletPoint.astro";
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                <strong>Ingestión.</strong> PDFs and images are normalized and split
-                into pages.
+                <strong>Ingestión.</strong> PDFs e imágenes se normalizan y dividen
+                en páginas.
               </span>
             </li>
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                <strong>OCR.</strong> Text and bounding boxes extracted using multiple
-                OCR engines.
+                <strong>OCR.</strong> Extracción de texto y bounding boxes usando
+                distintos motores.
               </span>
             </li>
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                <strong>Layout & orden de lectura.</strong> Structural blocks inferred
-                deterministically.
+                <strong>Layout y orden de lectura.</strong> Inferencia estructural
+                determinística.
               </span>
             </li>
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                <strong>Comprensión del documento.</strong> Sections, tables and candidate
-                fields identified.
+                <strong>Comprensión del documento.</strong> Identificación de secciones,
+                tablas y campos candidatos.
               </span>
             </li>
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                <strong>Extracción agentic.</strong> Agents reason, retry, and validate
-                missing or conflicting fields.
+                <strong>Extracción agentic.</strong> Agentes razonan, reintentan y
+                validan datos faltantes o inconsistentes.
               </span>
             </li>
           </ul>
@@ -120,30 +121,30 @@ import BulletPoint from "../../components/ui/BulletPoint.astro";
         <section>
           <Title>Uso de agentes</Title>
           <p class="mt-4 text-neutral-700">
-            Agents are introduced only where reasoning is required. They do not
-            replace deterministic stages, but orchestrate them.
+            Los agentes se utilizan únicamente donde se requiere razonamiento.
+            No reemplazan las etapas determinísticas, sino que las orquestan.
           </p>
 
           <ul class="mt-6 space-y-3">
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                <strong>Field discovery.</strong> Decide what information is relevant
-                for a given document type.
+                <strong>Descubrimiento de campos.</strong>
+                Determina qué información es relevante según el tipo de documento.
               </span>
             </li>
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                <strong>Self-validation.</strong> Detect missing or inconsistent values
-                and retry extraction.
+                <strong>Autovalidación.</strong>
+                Detecta valores faltantes o contradictorios y reintenta extracción.
               </span>
             </li>
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                <strong>RAG preparation.</strong> Produce semantically meaningful,
-                labeled chunks.
+                <strong>Preparación para RAG.</strong>
+                Genera chunks semánticos con metadatos preservados.
               </span>
             </li>
           </ul>
@@ -155,20 +156,22 @@ import BulletPoint from "../../components/ui/BulletPoint.astro";
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                <strong>Agentic where necessary.</strong> OCR and layout remain deterministic.
+                <strong>Agentic solo donde aporta valor.</strong>
+                OCR y layout siguen siendo determinísticos.
               </span>
             </li>
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                <strong>Validation over generation.</strong> Outputs must be schema-conformant.
+                <strong>Validación antes que generación.</strong>
+                La salida debe cumplir esquemas estrictos.
               </span>
             </li>
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                <strong>Composable pipeline.</strong> Each stage is independently
-                replaceable.
+                <strong>Pipelines componibles.</strong>
+                Cada etapa es intercambiable.
               </span>
             </li>
           </ul>
@@ -180,19 +183,19 @@ import BulletPoint from "../../components/ui/BulletPoint.astro";
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                Robust extraction across heterogeneous documents
+                Extracción robusta en documentos heterogéneos
               </span>
             </li>
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                Reduced reliance on brittle, hand-written rules
+                Menor dependencia de reglas frágiles
               </span>
             </li>
             <li class="flex items-center gap-2">
               <BulletPoint />
               <span class="text-neutral-700">
-                RAG-ready outputs with preserved structure and metadata
+                Datos listos para RAG con estructura y contexto preservados
               </span>
             </li>
           </ul>

@@ -47,7 +47,7 @@ export function WorkTabs({ title, items }: WorkTabsProps) {
                   {item.title}
                 </h3>
 
-                <p className="mt-4 max-w-prose text-neutral-700">
+                <p className="mt-4 max-w-prose text-neutral-900">
                   {item.description}
                 </p>
 

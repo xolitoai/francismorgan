@@ -9,6 +9,8 @@ import {
   Button,
   Input,
   TextArea,
+  Label,
+  TextField,
 } from "react-aria-components";
 
 type Variant = "primary" | "secondary" | "link";
@@ -97,13 +99,16 @@ export default function ContactModal({
               className="mt-4 space-y-4"
               noValidate
             >
-              <div>
+              <TextField>
+                <Label className="block text-sm font-medium text-neutral-700 mb-1">
+                  Nombre
+                </Label>
                 <Input
                   autoFocus
                   {...register("name", {
                     required: "El nombre es obligatorio",
                   })}
-                  placeholder="Nombre"
+                  placeholder="¿Cómo te llamas?"
                   className={inputClasses}
                 />
                 {errors.name && (
@@ -111,9 +116,12 @@ export default function ContactModal({
                     {errors.name.message}
                   </p>
                 )}
-              </div>
+              </TextField>
 
-              <div>
+              <TextField>
+                <Label className="block text-sm font-medium text-neutral-700 mb-1">
+                  Correo electronico
+                </Label>
                 <Input
                   {...register("email", {
                     required: "El email es obligatorio",
@@ -123,7 +131,7 @@ export default function ContactModal({
                     },
                   })}
                   type="email"
-                  placeholder="Email"
+                  placeholder="tu@email.com"
                   className={inputClasses}
                 />
                 {errors.email && (
@@ -131,23 +139,33 @@ export default function ContactModal({
                     {errors.email.message}
                   </p>
                 )}
-              </div>
-              <div>
+              </TextField>
+
+              <TextField>
+                <Label className="block text-sm font-medium text-neutral-700 mb-1">
+                  Sitio web
+                </Label>
                 <Input
                   {...register("website", {})}
-                  placeholder="Sitio web"
+                  placeholder="https://tusitio.com (opcional)"
                   className={inputClasses}
                 />
-              </div>
-              <div>
+              </TextField>
+              <TextField>
+                <Label className="block text-sm font-medium text-neutral-700 mb-1">
+                  Compañia
+                </Label>
                 <Input
                   {...register("company", {})}
-                  placeholder="Compañia"
+                  placeholder="Nombre de tu empresa, producto o proyecto"
                   className={inputClasses}
                 />
-              </div>
+              </TextField>
 
-              <div>
+              <TextField>
+                <Label className="block text-sm font-medium text-neutral-700 mb-1">
+                  Cuentanos mas de tu proyecto
+                </Label>
                 <TextArea
                   {...register("message", {
                     required: "Cuéntanos sobre tu proyecto",
@@ -164,7 +182,7 @@ export default function ContactModal({
                     },
                   })}
                   rows={4}
-                  placeholder="Cuéntanos sobre tu proyecto"
+                  placeholder="Cuéntanos qué quieres construir, qué problema quieres resolver y en qué etapa estás…"
                   className={inputClasses}
                 />
                 {errors.message && (
@@ -172,7 +190,7 @@ export default function ContactModal({
                     {errors.message.message}
                   </p>
                 )}
-              </div>
+              </TextField>
 
               <div className="flex justify-end gap-3 pt-2">
                 <Button

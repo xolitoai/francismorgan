@@ -1,10 +1,10 @@
 ---
-import { Minus } from "@lucide/astro";
 import Layout from "../../layouts/Layout.astro";
 import Title from "../../components/ui/Title.astro";
 import Pill from "../../components/ui/Pill.astro";
 import Link from "../../components/ui/Link.astro";
 import BulletPoint from "../../components/ui/BulletPoint.astro";
+import { ProductTabs } from "../../components/react/product-tabs";
 ---
 
 <Layout>
@@ -81,76 +81,36 @@ import BulletPoint from "../../components/ui/BulletPoint.astro";
         </section>
 
         <!-- product images -->
-        <section class="mt-16" data-tabs>
-          <div class="border-b border-neutral-200">
-            <nav class="-mb-px flex gap-6 text-sm font-medium overflow-auto">
-              <button
-                data-tab="dashboard"
-                class="tab border-b-2 whitespace-nowrap border-indigo-600 pb-2 text-indigo-600"
-              >
-                Inicio de sesion
-              </button>
-              <button
-                data-tab="whatsapp"
-                class="tab pb-2 whitespace-nowrap text-neutral-500 hover:text-neutral-700"
-              >
-                Registro
-              </button>
-              <button
-                data-tab="account"
-                class="tab pb-2 whitespace-nowrap text-neutral-500 hover:text-neutral-700"
-              >
-                Cuenta
-              </button>
-              <button
-                data-tab="billing"
-                class="tab pb-2 whitespace-nowrap text-neutral-500 hover:text-neutral-700"
-              >
-                Suscripcion
-              </button>
-            </nav>
-          </div>
-
-          <!-- Tab panels -->
-          <figure class="mt-8 tab-panel" data-panel="dashboard">
-            <img
-              src="/work/xolito/sign-in.png"
-              alt="Dashboard principal de Xolito"
-              class="w-full rounded-lg border border-neutral-200"
-            />
-            <figcaption class="mt-3 text-sm text-neutral-500">
-              Pagina de inicio de sesion con mensajes de texto.
-            </figcaption>
-          </figure>
-
-          <figure class="mt-8 tab-panel hidden" data-panel="whatsapp">
-            <img
-              src="/work/xolito/sign-up.png"
-              class="w-full rounded-lg border border-neutral-200"
-            />
-            <figcaption class="mt-3 text-sm text-neutral-500">
-              Pagina de registro con mensajes de texto.
-            </figcaption>
-          </figure>
-
-          <figure class="mt-8 tab-panel hidden" data-panel="account">
-            <img
-              src="/work/xolito/account.png"
-              class="w-full rounded-lg border border-neutral-200"
-            />
-            <figcaption class="mt-3 text-sm text-neutral-500">
-              Administracion de cuenta personal y suscripcion.
-            </figcaption>
-          </figure>
-          <figure class="mt-8 tab-panel hidden" data-panel="billing">
-            <img
-              src="/work/xolito/billing.png"
-              class="w-full rounded-lg border border-neutral-200"
-            />
-            <figcaption class="mt-3 text-sm text-neutral-500">
-              Administracion de suscripcion y prueba gratuita
-            </figcaption>
-          </figure>
+        <section class="mt-16">
+          <ProductTabs
+            client:load
+            tabs={[
+              {
+                id: "dashboard",
+                label: "Inicio de sesión",
+                imageSrc: "/work/xolito/sign-in.png",
+                caption: "Página de inicio de sesión con mensajes de texto.",
+              },
+              {
+                id: "whatsapp",
+                label: "Registro",
+                imageSrc: "/work/xolito/sign-up.png",
+                caption: "Página de registro con mensajes de texto.",
+              },
+              {
+                id: "account",
+                label: "Cuenta",
+                imageSrc: "/work/xolito/account.png",
+                caption: "Administración de cuenta personal y suscripción.",
+              },
+              {
+                id: "billing",
+                label: "Suscripción",
+                imageSrc: "/work/xolito/billing.png",
+                caption: "Administración de suscripción y prueba gratuita.",
+              },
+            ]}
+          />
         </section>
 
         <section>

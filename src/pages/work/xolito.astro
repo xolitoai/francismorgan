@@ -23,9 +23,6 @@ import Link from "../../components/ui/Link.astro";
 
       <div class="mt-6 flex flex-wrap gap-2">
         <Pill label="React" />
-        <Pill label="Typescript" />
-        <Pill label="Clerk" />
-        <Pill label="AWS" />
         <Pill label="Vite" />
         <Pill label="Serverless" />
         <Pill label="PostgreSQL" />
@@ -35,172 +32,210 @@ import Link from "../../components/ui/Link.astro";
       </div>
     </section>
 
-    <!-- Case study -->
-    <section class="mt-24 sm:mt-32 space-y-16">
-      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
-        <Title>Contexto</Title>
-        <p class="mt-4 text-neutral-700">
-          Registrar gastos falla por fricción: apps complejas, flujos largos y
-          poca constancia. WhatsApp es un canal ya integrado en la rutina
-          diaria, ideal para captura inmediata de información financiera.
-        </p>
-      </article>
+    <!-- Case study content -->
+    <section class="mt-24 sm:mt-32 space-y-20">
+      <div class="rounded-xl bg-white shadow px-8 py-16 sm:px-12 space-y-20">
+        <section>
+          <Title>Contexto</Title>
+          <p class="mt-4 text-neutral-700">
+            Registrar gastos falla por fricción: aplicaciones complejas, flujos
+            largos y poca constancia. WhatsApp es un canal ya integrado en la
+            rutina diaria, lo que lo convierte en un punto natural para capturar
+            información financiera en el momento correcto.
+          </p>
+        </section>
 
-      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
-        <Title>El problema</Title>
-        <ul class="mt-4 space-y-2">
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700"
-              >Registrar gastos requiere demasiado esfuerzo</span
-            >
-          </li>
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700"
-              >Los recordatorios no están ligados al contexto real</span
-            >
-          </li>
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700"
-              >Los datos existen, pero no generan claridad</span
-            >
-          </li>
-        </ul>
-      </article>
+        <section>
+          <Title>El problema</Title>
+          <ul class="mt-4 space-y-2">
+            <li class="flex items-center gap-2">
+              <Minus class="size-3.5 text-indigo-600" />
+              <span class="text-neutral-700">
+                Registrar gastos requiere demasiado esfuerzo
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <Minus class="size-3.5 text-indigo-600" />
+              <span class="text-neutral-700">
+                Los recordatorios no están ligados al contexto real
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <Minus class="size-3.5 text-indigo-600" />
+              <span class="text-neutral-700">
+                Los datos existen, pero no generan claridad
+              </span>
+            </li>
+          </ul>
+        </section>
 
-      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
-        <Title>La solución</Title>
-        <p class="mt-4 text-neutral-700">
-          Un asistente conversacional que permite registrar gastos, ingresos y
-          recordatorios en lenguaje natural vía WhatsApp, complementado por un
-          dashboard web para análisis. WhatsApp se usa solo para captura; la web
-          para visualización y control.
-        </p>
-      </article>
+        <section>
+          <Title>La solución</Title>
+          <p class="mt-4 text-neutral-700">
+            Un asistente conversacional que permite registrar gastos, ingresos y
+            recordatorios usando lenguaje natural vía WhatsApp, complementado
+            por un dashboard web para análisis. WhatsApp se utiliza
+            exclusivamente para captura; la web para visualización y control.
+          </p>
+        </section>
 
-      <!-- Images: product visuals -->
-      <section class="mt-16 space-y-8">
-        <img
-          src="/work/xolito/sign-in.png"
-          alt="Ejemplo de registro de gastos vía WhatsApp"
-          class="w-full rounded-xl border border-neutral-200 shadow"
-        />
-      </section>
+        <!-- product images -->
+        <section class="mt-16" data-tabs>
+          <div class="border-b border-neutral-200">
+            <nav class="-mb-px flex gap-6 text-sm font-medium">
+              <button
+                data-tab="dashboard"
+                class="tab border-b-2 border-indigo-600 pb-2 text-indigo-600"
+              >
+                Inicio de sesion
+              </button>
+              <button
+                data-tab="whatsapp"
+                class="tab pb-2 text-neutral-500 hover:text-neutral-700"
+              >
+                Registro
+              </button>
+              <button
+                data-tab="billing"
+                class="tab pb-2 text-neutral-500 hover:text-neutral-700"
+              >
+                Cuenta
+              </button>
+            </nav>
+          </div>
 
-      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
-        <Title>Uso de IA</Title>
+          <!-- Tab panels -->
+          <figure class="mt-8 tab-panel" data-panel="dashboard">
+            <img
+              src="/work/xolito/sign-in.png"
+              alt="Dashboard principal de Xolito"
+              class="w-full rounded-lg border border-neutral-200"
+            />
+            <figcaption class="mt-3 text-sm text-neutral-500">
+              Pagina de inicio de sesion con mensajes de texto.
+            </figcaption>
+          </figure>
 
-        <p class="mt-4 text-neutral-700">
-          Xolito utiliza modelos de lenguaje para interpretar mensajes en texto
-          libre y convertirlos en datos estructurados. La IA no ejecuta
-          acciones: solo propone una interpretación que el sistema valida antes
-          de guardar.
-        </p>
+          <figure class="mt-8 tab-panel hidden" data-panel="whatsapp">
+            <img
+              src="/work/xolito/sign-up.png"
+              class="w-full rounded-lg border border-neutral-200"
+            />
+            <figcaption class="mt-3 text-sm text-neutral-500">
+              Pagina de registro con mensajes de texto.
+            </figcaption>
+          </figure>
 
-        <ul class="mt-6 space-y-3">
-          <li class="flex items-start gap-2">
-            <Minus class="mt-1 size-3.5 text-indigo-600" />
-            <span class="text-neutral-700">
-              <strong>Clasificación de intención.</strong>
-              Identifica si un mensaje es un gasto, ingreso, recordatorio, consulta
-              o desconocido.
-            </span>
-          </li>
+          <figure class="mt-8 tab-panel hidden" data-panel="billing">
+            <img
+              src="/work/xolito/account.png"
+              class="w-full rounded-lg border border-neutral-200"
+            />
+            <figcaption class="mt-3 text-sm text-neutral-500">
+              Administracion de cuenta personal y suscripcion.
+            </figcaption>
+          </figure>
+        </section>
 
-          <li class="flex items-start gap-2">
-            <Minus class="mt-1 size-3.5 text-indigo-600" />
-            <span class="text-neutral-700">
-              <strong>Extracción estructurada.</strong>
-              Convierte texto libre en campos explícitos como monto, concepto y fecha.
-            </span>
-          </li>
+        <section>
+          <Title>Uso de IA</Title>
+          <p class="mt-4 text-neutral-700">
+            Xolito utiliza modelos de lenguaje para interpretar mensajes en
+            texto libre y convertirlos en datos estructurados. La IA no ejecuta
+            acciones: propone una interpretación que el sistema valida antes de
+            persistir.
+          </p>
 
-          <li class="flex items-start gap-2">
-            <Minus class="mt-1 size-3.5 text-indigo-600" />
-            <span class="text-neutral-700">
-              <strong>Validación estricta.</strong>
-              Si la interpretación es incompleta o ambigua, el mensaje se rechaza.
-            </span>
-          </li>
-        </ul>
-      </article>
+          <ul class="mt-6 space-y-3">
+            <li class="flex items-start gap-2">
+              <Minus class="mt-1 size-3.5 text-indigo-600" />
+              <span class="text-neutral-700">
+                <strong>Clasificación de intención.</strong>
+                Identifica si un mensaje es un gasto, ingreso, recordatorio, consulta
+                o desconocido.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Minus class="mt-1 size-3.5 text-indigo-600" />
+              <span class="text-neutral-700">
+                <strong>Extracción estructurada.</strong>
+                Convierte texto libre en campos explícitos como monto, concepto y
+                fecha.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Minus class="mt-1 size-3.5 text-indigo-600" />
+              <span class="text-neutral-700">
+                <strong>Validación estricta.</strong>
+                Si la interpretación es incompleta o ambigua, el mensaje se rechaza.
+              </span>
+            </li>
+          </ul>
+        </section>
 
-      <!-- Image: AI flow -->
-      <section class="mt-16">
-        <img
-          src="/images/placeholder-ai-flow.png"
-          alt="Flujo de interpretación con IA en Xolito"
-          class="w-full rounded-xl border border-neutral-200"
-        />
-      </section>
+        <section>
+          <Title>Decisiones clave</Title>
+          <ul class="mt-4 space-y-3">
+            <li class="flex items-start gap-2">
+              <Minus class="mt-1 size-3.5 text-indigo-600" />
+              <span class="text-neutral-700">
+                <strong>Procesamiento sin estado.</strong>
+                Cada mensaje debe ser entendible por sí solo para evitar ambigüedad.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Minus class="mt-1 size-3.5 text-indigo-600" />
+              <span class="text-neutral-700">
+                <strong>Confiabilidad sobre “magia”.</strong>
+                En datos financieros, si no hay certeza, no se ejecuta.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Minus class="mt-1 size-3.5 text-indigo-600" />
+              <span class="text-neutral-700">
+                <strong>Separación de responsabilidades.</strong>
+                Captura por chat, análisis en web.
+              </span>
+            </li>
+          </ul>
+        </section>
 
-      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
-        <Title>Decisiones clave</Title>
+        <section>
+          <Title>Arquitectura</Title>
+          <p class="mt-4 text-neutral-700">
+            El sistema recibe mensajes vía webhooks de WhatsApp, los procesa en
+            un backend serverless de forma idempotente y persiste los datos en
+            PostgreSQL. Las tareas diferidas, como recordatorios, se ejecutan de
+            forma asíncrona, mientras que el dashboard web consume datos
+            agregados para visualización.
+          </p>
+        </section>
 
-        <ul class="mt-4 space-y-3">
-          <li class="flex items-start gap-2">
-            <Minus class="mt-1 size-3.5 text-indigo-600" />
-            <span class="text-neutral-700">
-              <strong>Procesamiento sin estado.</strong>
-              Cada mensaje debe ser entendible por sí solo para evitar ambigüedad.
-            </span>
-          </li>
-
-          <li class="flex items-start gap-2">
-            <Minus class="mt-1 size-3.5 text-indigo-600" />
-            <span class="text-neutral-700">
-              <strong>Confiabilidad sobre “magia”.</strong>
-              En datos financieros, si no hay certeza, no se ejecuta.
-            </span>
-          </li>
-
-          <li class="flex items-start gap-2">
-            <Minus class="mt-1 size-3.5 text-indigo-600" />
-            <span class="text-neutral-700">
-              <strong>Separación de responsabilidades.</strong>
-              Captura por chat, análisis en web.
-            </span>
-          </li>
-        </ul>
-      </article>
-
-      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
-        <Title>Arquitectura</Title>
-
-        <p class="mt-4 text-neutral-700">
-          El sistema recibe mensajes vía webhooks de WhatsApp, los procesa en un
-          backend serverless de forma idempotente y persiste los datos en
-          PostgreSQL. Las tareas diferidas, como recordatorios, se ejecutan de
-          forma asíncrona. El dashboard web consume datos agregados para
-          visualización.
-        </p>
-      </article>
-
-      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
-        <Title>Resultados</Title>
-        <ul class="mt-4 space-y-2">
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700">
-              Registro de gastos en segundos, sin onboarding
-            </span>
-          </li>
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700">
-              Mayor constancia al usar un canal ya integrado en la rutina diaria
-            </span>
-          </li>
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700">
-              Menos errores gracias a validaciones estrictas sobre la IA
-            </span>
-          </li>
-        </ul>
-      </article>
+        <section>
+          <Title>Resultados</Title>
+          <ul class="mt-4 space-y-2">
+            <li class="flex items-center gap-2">
+              <Minus class="size-3.5 text-indigo-600" />
+              <span class="text-neutral-700">
+                Registro de gastos en segundos, sin onboarding
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <Minus class="size-3.5 text-indigo-600" />
+              <span class="text-neutral-700">
+                Mayor constancia al usar un canal ya integrado en la rutina
+                diaria
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <Minus class="size-3.5 text-indigo-600" />
+              <span class="text-neutral-700">
+                Menos errores gracias a validaciones estrictas sobre la IA
+              </span>
+            </li>
+          </ul>
+        </section>
+      </div>
     </section>
 
     <section class="mt-24">
@@ -208,3 +243,36 @@ import Link from "../../components/ui/Link.astro";
     </section>
   </main>
 </Layout>
+
+<script>
+  document.querySelectorAll("[data-tabs]").forEach((tabs) => {
+    const buttons = tabs.querySelectorAll<HTMLButtonElement>("[data-tab]");
+    const panels = tabs.querySelectorAll<HTMLElement>("[data-panel]");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const tab = button.dataset.tab;
+
+        buttons.forEach((b) => {
+          b.classList.remove(
+            "border-indigo-600",
+            "text-indigo-600",
+            "border-b-2",
+          );
+          b.classList.add("text-neutral-500");
+        });
+
+        panels.forEach((p) => p.classList.add("hidden"));
+
+        button.classList.add(
+          "border-b-2",
+          "border-indigo-600",
+          "text-indigo-600",
+        );
+        button.classList.remove("text-neutral-500");
+
+        tabs.querySelector(`[data-panel="${tab}"]`)?.classList.remove("hidden");
+      });
+    });
+  });
+</script>

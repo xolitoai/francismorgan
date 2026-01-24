@@ -1,78 +1,100 @@
-<div class="mx-auto max-w-2xl">
-  <ol class="relative border-l border-neutral-300 pl-8 space-y-10">
-    <!-- Deterministic -->
-    <li>
-      <span class="absolute -left-2.5 top-1 h-5 w-5 rounded-full bg-neutral-400"
-      ></span>
-      <h4 class="text-sm font-medium text-neutral-900">Ingestión</h4>
-      <p class="mt-1 text-sm text-neutral-600">
-        Normalización de PDFs e imágenes
-      </p>
-    </li>
+---
+import Title from "../../components/ui/Title.astro";
+---
 
-    <li>
-      <span class="absolute -left-2.5 top-1 h-5 w-5 rounded-full bg-neutral-400"
-      ></span>
-      <h4 class="text-sm font-medium text-neutral-900">OCR</h4>
-      <p class="mt-1 text-sm text-neutral-600">
-        Extracción de texto y bounding boxes
-      </p>
-    </li>
+<section>
+  <Title>Pipeline</Title>
 
-    <li>
-      <span class="absolute -left-2.5 top-1 h-5 w-5 rounded-full bg-neutral-400"
-      ></span>
-      <h4 class="text-sm font-medium text-neutral-900">
-        Layout y orden de lectura
-      </h4>
-      <p class="mt-1 text-sm text-neutral-600">
-        Inferencia estructural determinística
-      </p>
-    </li>
+  <div class="mt-10 relative">
+    <!-- vertical line -->
+    <div class="absolute left-3 top-0 bottom-0 w-px bg-neutral-200"></div>
 
-    <li>
-      <span class="absolute -left-2.5 top-1 h-5 w-5 rounded-full bg-neutral-400"
-      ></span>
-      <h4 class="text-sm font-medium text-neutral-900">
-        Comprensión del documento
-      </h4>
-      <p class="mt-1 text-sm text-neutral-600">
-        Secciones, tablas y campos candidatos
-      </p>
-    </li>
-
-    <!-- Agentic -->
-    <li class="relative">
-      <span class="absolute -left-3 top-1 h-6 w-6 rounded-full bg-indigo-600"
-      ></span>
-      <div class="rounded-xl border border-indigo-500 bg-indigo-50 px-4 py-3">
-        <h4 class="text-sm font-medium text-indigo-900">Extracción agentic</h4>
-        <p class="mt-1 text-sm text-indigo-700">
-          Planifica → extrae → valida → reintenta
+    <ol class="space-y-10">
+      <li class="relative pl-10">
+        <span
+          class="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-neutral-400 text-white text-xs font-semibold"
+        >
+          1
+        </span>
+        <p class="font-semibold text-neutral-900">Ingestión</p>
+        <p class="mt-1 text-neutral-700">
+          Normalización de PDFs e imágenes y separación por páginas.
         </p>
-      </div>
+      </li>
 
-      <!-- loop indicator -->
-      <p class="mt-2 text-xs text-indigo-600">
-        ↺ Reintentos controlados ante ambigüedad
-      </p>
-    </li>
+      <li class="relative pl-10">
+        <span
+          class="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-neutral-400 text-white text-xs font-semibold"
+        >
+          2
+        </span>
+        <p class="font-semibold text-neutral-900">OCR</p>
+        <p class="mt-1 text-neutral-700">
+          Extracción de texto y bounding boxes usando distintos motores.
+        </p>
+      </li>
 
-    <!-- Outputs -->
-    <li>
-      <span class="absolute -left-2.5 top-1 h-5 w-5 rounded-full bg-neutral-400"
-      ></span>
-      <h4 class="text-sm font-medium text-neutral-900">Salida estructurada</h4>
-      <p class="mt-1 text-sm text-neutral-600">JSON validado por esquema</p>
-    </li>
+      <li class="relative pl-10">
+        <span
+          class="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-neutral-400 text-white text-xs font-semibold"
+        >
+          3
+        </span>
+        <p class="font-semibold text-neutral-900">Layout y orden de lectura</p>
+        <p class="mt-1 text-neutral-700">
+          Inferencia estructural determinística del documento.
+        </p>
+      </li>
 
-    <li>
-      <span class="absolute -left-2.5 top-1 h-5 w-5 rounded-full bg-neutral-400"
-      ></span>
-      <h4 class="text-sm font-medium text-neutral-900">Artefactos para RAG</h4>
-      <p class="mt-1 text-sm text-neutral-600">
-        Chunks semánticos con metadatos
-      </p>
-    </li>
-  </ol>
-</div>
+      <li class="relative pl-10">
+        <span
+          class="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-neutral-400 text-white text-xs font-semibold"
+        >
+          4
+        </span>
+        <p class="font-semibold text-neutral-900">Comprensión del documento</p>
+        <p class="mt-1 text-neutral-700">
+          Identificación de secciones, tablas y campos candidatos.
+        </p>
+      </li>
+
+      <!-- Agentic step -->
+      <li class="relative pl-10">
+        <span
+          class="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600 text-white text-xs font-semibold"
+        >
+          5
+        </span>
+        <p class="font-semibold text-indigo-900">Extracción agentic</p>
+        <p class="mt-1 text-indigo-700">
+          El agente planifica, extrae, valida y reintenta cuando hay ambigüedad
+          o información faltante.
+        </p>
+      </li>
+
+      <li class="relative pl-10">
+        <span
+          class="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-neutral-400 text-white text-xs font-semibold"
+        >
+          6
+        </span>
+        <p class="font-semibold text-neutral-900">Salida estructurada</p>
+        <p class="mt-1 text-neutral-700">
+          Datos emitidos como JSON validado por esquema.
+        </p>
+      </li>
+
+      <li class="relative pl-10">
+        <span
+          class="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-neutral-400 text-white text-xs font-semibold"
+        >
+          7
+        </span>
+        <p class="font-semibold text-neutral-900">Artefactos para RAG</p>
+        <p class="mt-1 text-neutral-700">
+          Chunks semánticos con metadatos preservados para recuperación.
+        </p>
+      </li>
+    </ol>
+  </div>
+</section>

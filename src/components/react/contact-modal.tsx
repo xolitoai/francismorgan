@@ -99,6 +99,7 @@ export default function ContactModal({
             >
               <div>
                 <Input
+                  autoFocus
                   {...register("name", {
                     required: "El nombre es obligatorio",
                   })}

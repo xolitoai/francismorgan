@@ -7,7 +7,6 @@ import {
   Dialog,
   Heading,
   Button,
-  TextField,
   Input,
   TextArea,
 } from "react-aria-components";
@@ -25,6 +24,9 @@ type FormValues = {
   email: string;
   message: string;
 };
+
+const inputClasses =
+  "w-full appearance-none bg-transparent border-0 rounded-lg text-neutral-900 ring ring-indigo-500 transition outline-none ring-inset placeholder:text-neutral-400 data-disabled:pointer-events-none data-disabled:bg-neutral-100 data-focused:ring-2 data-focused:ring-indigo-600";
 
 export default function ContactModal({
   variant = "primary",
@@ -99,10 +101,7 @@ export default function ContactModal({
                     required: "El nombre es obligatorio",
                   })}
                   placeholder="Nombre"
-                  className={clsx(
-                    "w-full rounded-lg border px-3 py-2",
-                    errors.name && "border-red-500",
-                  )}
+                  className={inputClasses}
                 />
                 {errors.name && (
                   <p className="mt-1 text-sm text-red-600">
@@ -122,10 +121,7 @@ export default function ContactModal({
                   })}
                   type="email"
                   placeholder="Email"
-                  className={clsx(
-                    "w-full rounded-lg border px-3 py-2",
-                    errors.email && "border-red-500",
-                  )}
+                  className={inputClasses}
                 />
                 {errors.email && (
                   <p className="mt-1 text-sm text-red-600">
@@ -138,13 +134,21 @@ export default function ContactModal({
                 <TextArea
                   {...register("message", {
                     required: "Cuéntanos sobre tu proyecto",
+                    validate: (value) => {
+                      const wordCount = value
+                        .trim()
+                        .split(/\s+/)
+                        .filter(Boolean).length;
+
+                      return (
+                        wordCount >= 10 ||
+                        "El mensaje debe tener al menos 10 palabras"
+                      );
+                    },
                   })}
                   rows={4}
                   placeholder="Cuéntanos sobre tu proyecto"
-                  className={clsx(
-                    "w-full rounded-lg border px-3 py-2",
-                    errors.message && "border-red-500",
-                  )}
+                  className={inputClasses}
                 />
                 {errors.message && (
                   <p className="mt-1 text-sm text-red-600">
@@ -157,7 +161,7 @@ export default function ContactModal({
                 <Button
                   type="button"
                   onPress={() => setOpen(false)}
-                  className="text-neutral-600"
+                  className="text-neutral-600 outline-none"
                 >
                   Cancelar
                 </Button>
@@ -165,7 +169,7 @@ export default function ContactModal({
                 <Button
                   type="submit"
                   isDisabled={isSubmitting}
-                  className="rounded-lg bg-indigo-600 px-4 py-2 text-white disabled:opacity-50"
+                  className="rounded-lg bg-indigo-600 px-4 py-2 text-white disabled:opacity-50 outline-none"
                 >
                   {isSubmitting ? "Enviando…" : "Enviar"}
                 </Button>

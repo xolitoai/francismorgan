@@ -1,8 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Title from "../components/ui/Title.astro";
-import { Minus } from "@lucide/astro";
-import Pill from "../components/ui/Pill.astro";
+import WorkItem from "../components/ui/WorkItem.astro";
 ---
 
 <Layout>
@@ -12,7 +10,7 @@ import Pill from "../components/ui/Pill.astro";
       <h1
         class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-neutral-900"
       >
-        Proyectos
+        Nuestro trabajo
       </h1>
 
       <p class="mt-4 max-w-2xl text-base sm:text-lg text-neutral-600">
@@ -21,51 +19,50 @@ import Pill from "../components/ui/Pill.astro";
       </p>
     </section>
 
-    <!-- Projects list -->
+    <!-- Work list -->
     <section class="mt-24 sm:mt-32 space-y-16">
       <!-- Project -->
-      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
-        <Title>Xolito</Title>
+      <WorkItem
+        title="Xolito"
+        description="Plataforma de finanzas personales vía WhatsApp con dashboard web para análisis, control y automatización."
+        highlights={[
+          "Procesamiento de lenguaje natural",
+          "Integración con WhatsApp",
+          "Arquitectura serverless",
+        ]}
+        stack={[
+          "Next.js",
+          "Vercel",
+          "PostgreSQL",
+          "Stripe",
+          "Hono",
+          "WhatsApp API",
+        ]}
+      />
 
-        <p class="mt-4 max-w-2xl text-neutral-700">
-          Plataforma de finanzas personales vía WhatsApp con un dashboard web
-          para análisis, control y automatización.
-        </p>
+      <WorkItem
+        title="Agentic pipelines para documentos"
+        description="Sistemas agentic para procesar, clasificar y validar documentos de forma automática."
+        highlights={[
+          "Pipelines multi-step con agentes",
+          "Extracción y validación de datos",
+          "Reducción significativa de trabajo manual",
+        ]}
+        stack={["Node.js", "Python", "OpenAI", "PostgreSQL", "AWS"]}
+        href="/work/agentic-pipelines"
+      />
 
-        <ul class="mt-6 space-y-2 text-sm text-neutral-700">
-          <li class="flex items-center gap-2">
-            <Minus class="text-indigo-600 size-3.5" />
-            <span>Procesamiento de lenguaje natural</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <Minus class="text-indigo-600 size-3.5" />
-            <span>Integración con WhatsApp</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <Minus class="text-indigo-600 size-3.5" />
-            <span>Arquitectura serverless</span>
-          </li>
-        </ul>
-
-        <div class="mt-6 flex flex-wrap gap-2">
-          <Pill label="Next.js" />
-          <Pill label="Vercel" />
-          <Pill label="PostgreSQL" />
-          <Pill label="Stripe" />
-          <Pill label="Hono" />
-          <Pill label="Whatsapp API" />
-        </div>
-        <div class="mt-6">
-          <a
-            href="/work"
-            class="inline-flex items-center gap-2 text-sm font-medium"
-          >
-            <span class="text-indigo-600 hover:text-indigo-500">Ver más</span>
-          </a>
-        </div>
-      </article>
-
-      <!-- Repeat for next projects -->
+      <WorkItem
+        title="Búsqueda de alto rendimiento con PostgreSQL"
+        description="Implementación de búsqueda avanzada ultra rápida usando capacidades nativas de PostgreSQL."
+        highlights={[
+          "Full-text search optimizado",
+          "Consultas en milisegundos",
+          "Sin dependencias externas",
+        ]}
+        stack={["PostgreSQL", "SQL", "Next.js", "Vercel"]}
+        href="/work/postgres-search"
+      />
     </section>
   </main>
 </Layout>

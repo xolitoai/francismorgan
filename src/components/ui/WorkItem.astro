@@ -1,0 +1,53 @@
+---
+import clsx from "clsx";
+import { Minus } from "@lucide/astro";
+import Title from "../ui/Title.astro";
+import Pill from "../ui/Pill.astro";
+
+type Props = {
+  title: string;
+  description: string;
+  highlights: string[];
+  stack: string[];
+  href?: string;
+};
+
+const {
+  title,
+  description,
+  highlights,
+  stack,
+  href = "/work",
+} = Astro.props as Props;
+
+const articleClass = clsx("rounded-xl bg-white p-8 sm:p-10 shadow");
+---
+
+<article class={articleClass}>
+  <Title>{title}</Title>
+
+  <p class="mt-4 max-w-2xl text-neutral-700">
+    {description}
+  </p>
+
+  <ul class="mt-6 space-y-2 text-sm text-neutral-700">
+    {
+      highlights.map((item) => (
+        <li class="flex items-center gap-2">
+          <Minus class="size-3.5 text-indigo-600" />
+          <span>{item}</span>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="mt-6 flex flex-wrap gap-2">
+    {stack.map((tech) => <Pill label={tech} />)}
+  </div>
+
+  <div class="mt-6">
+    <a href={href} class="inline-flex items-center gap-2 text-sm font-medium">
+      <span class="text-indigo-600 hover:text-indigo-500"> Ver más </span>
+    </a>
+  </div>
+</article>

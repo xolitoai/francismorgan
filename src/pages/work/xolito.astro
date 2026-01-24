@@ -18,16 +18,20 @@ import Link from "../../components/ui/Link.astro";
 
       <p class="mt-4 max-w-2xl text-base sm:text-lg text-neutral-600">
         Plataforma de finanzas personales vía WhatsApp con dashboard web para
-        control, análisis y automatización.
+        captura rápida, análisis y automatización.
       </p>
 
       <div class="mt-6 flex flex-wrap gap-2">
-        <Pill label="Next.js" />
-        <Pill label="Vercel" />
+        <Pill label="React" />
+        <Pill label="Typescript" />
+        <Pill label="Clerk" />
+        <Pill label="AWS" />
+        <Pill label="Vite" />
+        <Pill label="Serverless" />
         <Pill label="PostgreSQL" />
         <Pill label="Stripe" />
-        <Pill label="Hono" />
         <Pill label="WhatsApp API" variant="indigo" />
+        <Pill label="AI / LLMs" variant="indigo" />
       </div>
     </section>
 
@@ -36,9 +40,9 @@ import Link from "../../components/ui/Link.astro";
       <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
         <Title>Contexto</Title>
         <p class="mt-4 text-neutral-700">
-          Las personas no registran sus gastos por fricción: aplicaciones
-          complejas, flujos largos y falta de constancia. WhatsApp es una
-          herramienta que ya usan todos los días.
+          Registrar gastos falla por fricción: apps complejas, flujos largos y
+          poca constancia. WhatsApp es un canal ya integrado en la rutina
+          diaria, ideal para captura inmediata de información financiera.
         </p>
       </article>
 
@@ -47,18 +51,20 @@ import Link from "../../components/ui/Link.astro";
         <ul class="mt-4 space-y-2">
           <li class="flex items-center gap-2">
             <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700">Registro manual poco práctico</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
             <span class="text-neutral-700"
-              >Falta de recordatorios contextuales</span
+              >Registrar gastos requiere demasiado esfuerzo</span
             >
           </li>
           <li class="flex items-center gap-2">
             <Minus class="size-3.5 text-indigo-600" />
             <span class="text-neutral-700"
-              >Poca visibilidad de hábitos financieros</span
+              >Los recordatorios no están ligados al contexto real</span
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700"
+              >Los datos existen, pero no generan claridad</span
             >
           </li>
         </ul>
@@ -67,38 +73,109 @@ import Link from "../../components/ui/Link.astro";
       <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
         <Title>La solución</Title>
         <p class="mt-4 text-neutral-700">
-          Un asistente conversacional que permite registrar gastos e ingresos
-          usando lenguaje natural, complementado por un dashboard web para
-          análisis y reportes.
+          Un asistente conversacional que permite registrar gastos, ingresos y
+          recordatorios en lenguaje natural vía WhatsApp, complementado por un
+          dashboard web para análisis. WhatsApp se usa solo para captura; la web
+          para visualización y control.
         </p>
+      </article>
+
+      <!-- Images: product visuals -->
+      <section class="mt-16 space-y-8">
+        <img
+          src="/work/xolito/sign-in.png"
+          alt="Ejemplo de registro de gastos vía WhatsApp"
+          class="w-full rounded-xl border border-neutral-200 shadow"
+        />
+      </section>
+
+      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
+        <Title>Uso de IA</Title>
+
+        <p class="mt-4 text-neutral-700">
+          Xolito utiliza modelos de lenguaje para interpretar mensajes en texto
+          libre y convertirlos en datos estructurados. La IA no ejecuta
+          acciones: solo propone una interpretación que el sistema valida antes
+          de guardar.
+        </p>
+
+        <ul class="mt-6 space-y-3">
+          <li class="flex items-start gap-2">
+            <Minus class="mt-1 size-3.5 text-indigo-600" />
+            <span class="text-neutral-700">
+              <strong>Clasificación de intención.</strong>
+              Identifica si un mensaje es un gasto, ingreso, recordatorio, consulta
+              o desconocido.
+            </span>
+          </li>
+
+          <li class="flex items-start gap-2">
+            <Minus class="mt-1 size-3.5 text-indigo-600" />
+            <span class="text-neutral-700">
+              <strong>Extracción estructurada.</strong>
+              Convierte texto libre en campos explícitos como monto, concepto y fecha.
+            </span>
+          </li>
+
+          <li class="flex items-start gap-2">
+            <Minus class="mt-1 size-3.5 text-indigo-600" />
+            <span class="text-neutral-700">
+              <strong>Validación estricta.</strong>
+              Si la interpretación es incompleta o ambigua, el mensaje se rechaza.
+            </span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Image: AI flow -->
+      <section class="mt-16">
+        <img
+          src="/images/placeholder-ai-flow.png"
+          alt="Flujo de interpretación con IA en Xolito"
+          class="w-full rounded-xl border border-neutral-200"
+        />
+      </section>
+
+      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
+        <Title>Decisiones clave</Title>
+
+        <ul class="mt-4 space-y-3">
+          <li class="flex items-start gap-2">
+            <Minus class="mt-1 size-3.5 text-indigo-600" />
+            <span class="text-neutral-700">
+              <strong>Procesamiento sin estado.</strong>
+              Cada mensaje debe ser entendible por sí solo para evitar ambigüedad.
+            </span>
+          </li>
+
+          <li class="flex items-start gap-2">
+            <Minus class="mt-1 size-3.5 text-indigo-600" />
+            <span class="text-neutral-700">
+              <strong>Confiabilidad sobre “magia”.</strong>
+              En datos financieros, si no hay certeza, no se ejecuta.
+            </span>
+          </li>
+
+          <li class="flex items-start gap-2">
+            <Minus class="mt-1 size-3.5 text-indigo-600" />
+            <span class="text-neutral-700">
+              <strong>Separación de responsabilidades.</strong>
+              Captura por chat, análisis en web.
+            </span>
+          </li>
+        </ul>
       </article>
 
       <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
         <Title>Arquitectura</Title>
-        <ul class="mt-4 space-y-2">
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700">WhatsApp como canal principal</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700"
-              >API serverless para procesamiento de mensajes</span
-            >
-          </li>
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700"
-              >Base de datos PostgreSQL para persistencia</span
-            >
-          </li>
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700"
-              >Dashboard web construido con Next.js</span
-            >
-          </li>
-        </ul>
+
+        <p class="mt-4 text-neutral-700">
+          El sistema recibe mensajes vía webhooks de WhatsApp, los procesa en un
+          backend serverless de forma idempotente y persiste los datos en
+          PostgreSQL. Las tareas diferidas, como recordatorios, se ejecutan de
+          forma asíncrona. El dashboard web consume datos agregados para
+          visualización.
+        </p>
       </article>
 
       <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
@@ -106,38 +183,20 @@ import Link from "../../components/ui/Link.astro";
         <ul class="mt-4 space-y-2">
           <li class="flex items-center gap-2">
             <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700">Registro inmediato sin fricción</span
-            >
-          </li>
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700"
-              >Mayor constancia en el seguimiento</span
-            >
-          </li>
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
-            <span class="text-neutral-700"
-              >Información clara para tomar decisiones</span
-            >
-          </li>
-        </ul>
-      </article>
-
-      <article class="rounded-xl bg-white p-8 sm:p-10 shadow">
-        <Title>Aprendizajes</Title>
-        <ul class="mt-4 space-y-2">
-          <li class="flex items-center gap-2">
-            <Minus class="size-3.5 text-indigo-600" />
             <span class="text-neutral-700">
-              Diseñar alrededor de hábitos existentes reduce fricción y mejora
-              adopción
+              Registro de gastos en segundos, sin onboarding
             </span>
           </li>
           <li class="flex items-center gap-2">
             <Minus class="size-3.5 text-indigo-600" />
             <span class="text-neutral-700">
-              La simplicidad del canal es clave para productos financieros
+              Mayor constancia al usar un canal ya integrado en la rutina diaria
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <Minus class="size-3.5 text-indigo-600" />
+            <span class="text-neutral-700">
+              Menos errores gracias a validaciones estrictas sobre la IA
             </span>
           </li>
         </ul>

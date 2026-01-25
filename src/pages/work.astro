@@ -4,65 +4,63 @@ import WorkItem from "../components/ui/WorkItem.astro";
 ---
 
 <Layout>
-  <main class="px-6 py-36 sm:py-40 max-w-3xl mx-auto">
-    <!-- introduction -->
-    <section>
-      <h1
-        class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-neutral-900"
-      >
-        Nuestro trabajo
-      </h1>
+  <!-- introduction -->
+  <section>
+    <h1
+      class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-neutral-900"
+    >
+      Nuestro trabajo
+    </h1>
 
-      <p class="mt-4 max-w-2xl text-base sm:text-lg text-neutral-500">
-        Una selección de proyectos donde he diseñado y desarrollado soluciones
-        reales para problemas reales.
-      </p>
-    </section>
+    <p class="mt-4 max-w-2xl text-base sm:text-lg text-neutral-500">
+      Una selección de proyectos donde he diseñado y desarrollado soluciones
+      reales para problemas reales.
+    </p>
+  </section>
 
-    <!-- work list -->
-    <section class="mt-24 sm:mt-32 space-y-16">
-      <WorkItem
-        title="Xolito"
-        href="/work/xolito"
-        description="Plataforma de finanzas personales vía WhatsApp con dashboard web para análisis, control y automatización."
-        highlights={[
-          "Procesamiento de lenguaje natural",
-          "Integración con WhatsApp",
-          "Arquitectura serverless",
-        ]}
-        stack={[
-          "Next.js",
-          "Vercel",
-          "PostgreSQL",
-          "Stripe",
-          "Hono",
-          "WhatsApp API",
-        ]}
-      />
+  <!-- work list -->
+  <section class="mt-24 sm:mt-32 space-y-16">
+    <WorkItem
+      title="Xolito"
+      href="/work/xolito"
+      description="Plataforma de finanzas personales vía WhatsApp con dashboard web para análisis, control y automatización."
+      highlights={[
+        "Procesamiento de lenguaje natural",
+        "Integración con WhatsApp",
+        "Arquitectura serverless",
+      ]}
+      stack={[
+        "Next.js",
+        "Vercel",
+        "PostgreSQL",
+        "Stripe",
+        "Hono",
+        "WhatsApp API",
+      ]}
+    />
 
-      <WorkItem
-        title="Agentic pipelines para documentos"
-        href="/work/agentic-pipelines"
-        description="Sistemas agentic para procesar, clasificar y validar documentos de forma automática."
-        highlights={[
-          "Pipelines multi-step con agentes",
-          "Extracción y validación de datos",
-          "Reducción significativa de trabajo manual",
-        ]}
-        stack={["Node.js", "Python", "OpenAI", "PostgreSQL", "AWS"]}
-      />
+    <WorkItem
+      title="Agentic pipelines para documentos"
+      href="/work/agentic-pipelines"
+      description="Sistemas agentic para procesar, clasificar y validar documentos de forma automática."
+      highlights={[
+        "Pipelines multi-step con agentes",
+        "Extracción y validación de datos",
+        "Reducción significativa de trabajo manual",
+      ]}
+      stack={["Node.js", "Python", "OpenAI", "PostgreSQL", "AWS"]}
+    />
 
-      <WorkItem
-        title="Búsqueda de alto rendimiento con PostgreSQL"
-        href="/work/postgres-search"
-        description="Implementación de búsqueda avanzada ultra rápida usando capacidades nativas de PostgreSQL."
-        highlights={[
-          "Full-text search optimizado",
-          "Consultas en milisegundos",
-          "Sin dependencias externas",
-        ]}
-        stack={["PostgreSQL", "SQL", "Next.js", "Vercel"]}
-      />
-    </section>
-  </main>
+    <WorkItem
+      title="Búsqueda de alto rendimiento con PostgreSQL"
+      href="/work/postgres-search"
+      description="Implementación de búsqueda avanzada ultra rápida usando capacidades nativas de PostgreSQL."
+      highlights={[
+        "Full-text search optimizado",
+        "Consultas en milisegundos",
+        "Sin dependencias externas",
+      ]}
+      stack={["PostgreSQL", "SQL", "Next.js", "Vercel"]}
+    />
+  </section>
 </Layout>

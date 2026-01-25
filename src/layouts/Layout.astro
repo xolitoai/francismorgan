@@ -1,6 +1,17 @@
 ---
+type Props = {
+  layout?: "fit" | "normal";
+};
+
+import clsx from "clsx";
 import Header from "../components/ui/Header.astro";
 import "../styles/global.css";
+
+const { layout = "fit" } = Astro.props;
+
+const layoutClasses = clsx({
+  "px-6 py-36 sm:py-40 max-w-3xl mx-auto": layout === "fit",
+});
 ---
 
 <!doctype html>
@@ -20,6 +31,8 @@ import "../styles/global.css";
     >
     </div>
     <Header />
-    <slot />
+    <main class={layoutClasses}>
+      <slot />
+    </main>
   </body>
 </html>

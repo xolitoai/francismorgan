@@ -10,68 +10,66 @@ import { WorkTabs } from "../components/react/work-tabs";
 ---
 
 <Layout>
-  <main class="px-6 py-36 sm:py-40 max-w-3xl mx-auto">
-    <!-- hero -->
-    <Hero />
+  <!-- hero -->
+  <Hero />
 
-    <!-- what do we build -->
-    <WhatWeBuild />
+  <!-- what do we build -->
+  <WhatWeBuild />
 
-    <!-- how do we work -->
-    <HowDoWeWork />
+  <!-- how do we work -->
+  <HowDoWeWork />
 
-    <!-- previous work -->
-    <!-- <WorkTabs /> -->
-    <WorkTabs
-      client:load
-      title="Nuestro Trabajo"
-      items={[
-        {
-          id: "xolito",
-          title: "Xolito",
-          href: "/work/xolito",
-          description:
-            "Plataforma de finanzas personales vía WhatsApp con dashboard web.",
-          highlights: [
-            "Procesamiento de lenguaje natural",
-            "Integración con WhatsApp",
-            "Arquitectura serverless",
-          ],
-        },
-        {
-          id: "agentic",
-          title: "Pipelines con IA",
-          href: "/work/agentic-pipeline",
-          description:
-            "Automatización inteligente para clasificar, extraer y validar documentos.",
-          highlights: [
-            "Pipelines multi-step",
-            "Validación automática",
-            "Reducción de trabajo manual",
-          ],
-        },
-        {
-          id: "postgres-search",
-          href: "/work/postgres-search",
-          title: "Búsqueda con PostgreSQL",
-          description:
-            "Búsqueda avanzada de alto rendimiento sin servicios externos.",
-          highlights: [
-            "Full-text search",
-            "Respuestas en milisegundos",
-            "Optimización SQL",
-          ],
-        },
-      ]}
-    />
+  <!-- previous work -->
+  <!-- <WorkTabs /> -->
+  <WorkTabs
+    client:load
+    title="Nuestro Trabajo"
+    items={[
+      {
+        id: "xolito",
+        title: "Xolito",
+        href: "/work/xolito",
+        description:
+          "Plataforma de finanzas personales vía WhatsApp con dashboard web.",
+        highlights: [
+          "Procesamiento de lenguaje natural",
+          "Integración con WhatsApp",
+          "Arquitectura serverless",
+        ],
+      },
+      {
+        id: "agentic",
+        title: "Pipelines con IA",
+        href: "/work/agentic-pipeline",
+        description:
+          "Automatización inteligente para clasificar, extraer y validar documentos.",
+        highlights: [
+          "Pipelines multi-step",
+          "Validación automática",
+          "Reducción de trabajo manual",
+        ],
+      },
+      {
+        id: "postgres-search",
+        href: "/work/postgres-search",
+        title: "Búsqueda con PostgreSQL",
+        description:
+          "Búsqueda avanzada de alto rendimiento sin servicios externos.",
+        highlights: [
+          "Full-text search",
+          "Respuestas en milisegundos",
+          "Optimización SQL",
+        ],
+      },
+    ]}
+  />
 
-    <!-- carousel section -->
-    <Carousel />
+  <!-- carousel section -->
+  <Carousel />
 
-    <!-- why choose us -->
-    <WhyChooseUs />
+  <!-- why choose us -->
+  <WhyChooseUs />
 
-    <!-- cta -->
-    <Cta />
-  </main>
+  <!-- cta -->
+  <Cta />
 </Layout>

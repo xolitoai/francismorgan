@@ -8,208 +8,205 @@ import AgenticDiagram from "../../components/ui/AgenticDiagram.astro";
 ---
 
 <Layout>
-  <main class="px-6 py-36 sm:py-40 max-w-3xl mx-auto">
-    <!-- Intro -->
-    <section>
-      <h1
-        class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-neutral-900"
-      >
-        Procesamiento de documentos mediante pipelines de IA agenticos
-      </h1>
+  <!-- Intro -->
+  <section>
+    <h1
+      class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-neutral-900"
+    >
+      Procesamiento de documentos mediante pipelines de IA agenticos
+    </h1>
 
-      <p class="mt-4 max-w-2xl text-base sm:text-lg text-neutral-500">
-        De OCR a comprensión y extracción agentic de documentos, produciendo
-        datos estructurados y listos para RAG.
-      </p>
+    <p class="mt-4 max-w-2xl text-base sm:text-lg text-neutral-500">
+      De OCR a comprensión y extracción agentic de documentos, produciendo datos
+      estructurados y listos para RAG.
+    </p>
 
-      <div class="mt-6 flex flex-wrap gap-2">
-        <Pill label="Document AI" />
-        <Pill label="OCR" />
-        <Pill label="Agentic Systems" />
-        <Pill label="LLMs" />
-        <Pill label="RAG" />
-        <Pill label="AWS" />
-      </div>
-    </section>
+    <div class="mt-6 flex flex-wrap gap-2">
+      <Pill label="Document AI" />
+      <Pill label="OCR" />
+      <Pill label="Agentic Systems" />
+      <Pill label="LLMs" />
+      <Pill label="RAG" />
+      <Pill label="AWS" />
+    </div>
+  </section>
 
-    <!-- Case study content -->
-    <section class="mt-24 sm:mt-32 space-y-20">
-      <div class="rounded-xl bg-white shadow px-8 py-16 sm:px-12 space-y-20">
-        <section>
-          <Title>Contexto</Title>
-          <p class="mt-4 text-neutral-700">
-            El procesamiento de documentos tradicional se basa en pipelines
-            estáticos: OCR, reglas y postprocesamiento frágil. A medida que los
-            documentos varían en formato, estructura e intención, estos sistemas
-            dejan de escalar.
-          </p>
-        </section>
+  <!-- Case study content -->
+  <section class="mt-24 sm:mt-32 space-y-20">
+    <div class="rounded-xl bg-white shadow px-8 py-16 sm:px-12 space-y-20">
+      <section>
+        <Title>Contexto</Title>
+        <p class="mt-4 text-neutral-700">
+          El procesamiento de documentos tradicional se basa en pipelines
+          estáticos: OCR, reglas y postprocesamiento frágil. A medida que los
+          documentos varían en formato, estructura e intención, estos sistemas
+          dejan de escalar.
+        </p>
+      </section>
 
-        <section>
-          <Title>El problema</Title>
-          <ul class="mt-4 space-y-2">
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                El OCR produce texto ruidoso y sin estructura
-              </span>
-            </li>
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                El layout y el orden de lectura cambian entre documentos
-              </span>
-            </li>
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                La extracción basada en reglas no generaliza
-              </span>
-            </li>
-          </ul>
-        </section>
+      <section>
+        <Title>El problema</Title>
+        <ul class="mt-4 space-y-2">
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              El OCR produce texto ruidoso y sin estructura
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              El layout y el orden de lectura cambian entre documentos
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              La extracción basada en reglas no generaliza
+            </span>
+          </li>
+        </ul>
+      </section>
 
-        <section>
-          <Title>La solución</Title>
-          <p class="mt-4 text-neutral-700">
-            Un pipeline por capas que combina etapas determinísticas (OCR,
-            detección de layout) con razonamiento agentic para comprensión,
-            extracción y validación.
-          </p>
-        </section>
+      <section>
+        <Title>La solución</Title>
+        <p class="mt-4 text-neutral-700">
+          Un pipeline por capas que combina etapas determinísticas (OCR,
+          detección de layout) con razonamiento agentic para comprensión,
+          extracción y validación.
+        </p>
+      </section>
 
-        <section>
-          <Title>Pipeline</Title>
-          <ul class="mt-6 space-y-3">
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                <strong>Ingestión.</strong> PDFs e imágenes se normalizan y dividen
-                en páginas.
-              </span>
-            </li>
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                <strong>OCR.</strong> Extracción de texto y bounding boxes usando
-                distintos motores.
-              </span>
-            </li>
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                <strong>Layout y orden de lectura.</strong> Inferencia estructural
-                determinística.
-              </span>
-            </li>
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                <strong>Comprensión del documento.</strong> Identificación de secciones,
-                tablas y campos candidatos.
-              </span>
-            </li>
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                <strong>Extracción agentic.</strong> Agentes razonan, reintentan y
-                validan datos faltantes o inconsistentes.
-              </span>
-            </li>
-          </ul>
-        </section>
+      <section>
+        <Title>Pipeline</Title>
+        <ul class="mt-6 space-y-3">
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              <strong>Ingestión.</strong> PDFs e imágenes se normalizan y dividen
+              en páginas.
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              <strong>OCR.</strong> Extracción de texto y bounding boxes usando distintos
+              motores.
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              <strong>Layout y orden de lectura.</strong> Inferencia estructural determinística.
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              <strong>Comprensión del documento.</strong> Identificación de secciones,
+              tablas y campos candidatos.
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              <strong>Extracción agentic.</strong> Agentes razonan, reintentan y validan
+              datos faltantes o inconsistentes.
+            </span>
+          </li>
+        </ul>
+      </section>
 
-        <section>
-          <Title>Uso de agentes</Title>
-          <p class="mt-4 text-neutral-700">
-            Los agentes se utilizan únicamente donde se requiere razonamiento.
-            No reemplazan las etapas determinísticas, sino que las orquestan.
-          </p>
+      <section>
+        <Title>Uso de agentes</Title>
+        <p class="mt-4 text-neutral-700">
+          Los agentes se utilizan únicamente donde se requiere razonamiento. No
+          reemplazan las etapas determinísticas, sino que las orquestan.
+        </p>
 
-          <div class="mt-8">
-            <AgenticDiagram />
-          </div>
+        <div class="mt-8">
+          <AgenticDiagram />
+        </div>
 
-          <ul class="mt-6 space-y-3">
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                <strong>Descubrimiento de campos.</strong>
-                Determina qué información es relevante según el tipo de documento.
-              </span>
-            </li>
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                <strong>Autovalidación.</strong>
-                Detecta valores faltantes o contradictorios y reintenta extracción.
-              </span>
-            </li>
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                <strong>Preparación para RAG.</strong>
-                Genera chunks semánticos con metadatos preservados.
-              </span>
-            </li>
-          </ul>
-        </section>
+        <ul class="mt-6 space-y-3">
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              <strong>Descubrimiento de campos.</strong>
+              Determina qué información es relevante según el tipo de documento.
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              <strong>Autovalidación.</strong>
+              Detecta valores faltantes o contradictorios y reintenta extracción.
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              <strong>Preparación para RAG.</strong>
+              Genera chunks semánticos con metadatos preservados.
+            </span>
+          </li>
+        </ul>
+      </section>
 
-        <section>
-          <Title>Decisiones clave</Title>
-          <ul class="mt-4 space-y-3">
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                <strong>Agentic solo donde aporta valor.</strong>
-                OCR y layout siguen siendo determinísticos.
-              </span>
-            </li>
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                <strong>Validación antes que generación.</strong>
-                La salida debe cumplir esquemas estrictos.
-              </span>
-            </li>
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                <strong>Pipelines componibles.</strong>
-                Cada etapa es intercambiable.
-              </span>
-            </li>
-          </ul>
-        </section>
+      <section>
+        <Title>Decisiones clave</Title>
+        <ul class="mt-4 space-y-3">
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              <strong>Agentic solo donde aporta valor.</strong>
+              OCR y layout siguen siendo determinísticos.
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              <strong>Validación antes que generación.</strong>
+              La salida debe cumplir esquemas estrictos.
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              <strong>Pipelines componibles.</strong>
+              Cada etapa es intercambiable.
+            </span>
+          </li>
+        </ul>
+      </section>
 
-        <section>
-          <Title>Resultados</Title>
-          <ul class="mt-4 space-y-2">
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                Extracción robusta en documentos heterogéneos
-              </span>
-            </li>
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                Menor dependencia de reglas frágiles
-              </span>
-            </li>
-            <li class="flex items-center gap-2">
-              <BulletPoint />
-              <span class="text-neutral-700">
-                Datos listos para RAG con estructura y contexto preservados
-              </span>
-            </li>
-          </ul>
-        </section>
-      </div>
-    </section>
+      <section>
+        <Title>Resultados</Title>
+        <ul class="mt-4 space-y-2">
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              Extracción robusta en documentos heterogéneos
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              Menor dependencia de reglas frágiles
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            <BulletPoint />
+            <span class="text-neutral-700">
+              Datos listos para RAG con estructura y contexto preservados
+            </span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </section>
 
-    <section class="mt-24">
-      <Link href="/work" variant="link">Volver a trabajo</Link>
-    </section>
-  </main>
+  <section class="mt-24">
+    <Link href="/work" variant="link">Volver a trabajo</Link>
+  </section>
 </Layout>

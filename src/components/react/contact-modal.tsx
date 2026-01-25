@@ -56,7 +56,7 @@ export default function ContactModal({
   }
 
   const triggerClasses = clsx(
-    "cursor-pointer transition",
+    "cursor-pointer transition outline-none",
     {
       "inline-block rounded-xl bg-indigo-600 text-white hover:bg-indigo-500":
         variant === "primary",

@@ -185,7 +185,7 @@ export default function ContactModal({
                     },
                   })}
                   rows={4}
-                  placeholder="Cuéntanos qué quieres construir, qué problema quieres resolver y en qué etapa estás…"
+                  placeholder="Cuéntanos qué quieres construir, qué problema quieres resolver y en qué etapa estás"
                   className={inputClasses}
                 />
                 {errors.message && (

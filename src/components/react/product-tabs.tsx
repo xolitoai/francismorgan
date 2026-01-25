@@ -39,7 +39,7 @@ export function ProductTabs({ tabs }: ProductTabsProps) {
             <img
               src={tab.imageSrc}
               alt={tab.imageAlt ?? ""}
-              className="w-full rounded-lg border border-neutral-200"
+              className="w-full rounded-xl border border-neutral-200"
             />
             {tab.caption && (
               <figcaption className="mt-3 text-sm text-neutral-500">

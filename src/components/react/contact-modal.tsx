@@ -199,7 +199,7 @@ export default function ContactModal({
                 <Button
                   type="button"
                   onPress={() => setOpen(false)}
-                  className="text-neutral-600 outline-none"
+                  className="text-neutral-600 cursor-pointer outline-none"
                 >
                   Cancelar
                 </Button>
@@ -207,7 +207,7 @@ export default function ContactModal({
                 <Button
                   type="submit"
                   isDisabled={isSubmitting}
-                  className="rounded-lg bg-indigo-600 px-4 py-2 text-white disabled:opacity-50 outline-none"
+                  className="rounded-xl cursor-pointer bg-indigo-600 px-4 py-2 text-white disabled:opacity-50 outline-none"
                 >
                   {isSubmitting ? "Enviando…" : "Enviar"}
                 </Button>

@@ -30,7 +30,7 @@ type FormValues = {
 };
 
 const inputClasses =
-  "w-full appearance-none bg-transparent border-0 rounded-xl text-neutral-900 ring ring-indigo-500 transition outline-none ring-inset placeholder:text-neutral-400 data-disabled:pointer-events-none data-disabled:bg-neutral-100 data-focused:ring-2 data-focused:ring-indigo-600";
+  "w-full appearance-none bg-transparent border-0 rounded-xl text-neutral-900 ring ring-neutral-300 transition outline-none ring-inset placeholder:text-neutral-400 data-disabled:pointer-events-none data-disabled:bg-neutral-100 data-focused:ring-2 data-focused:ring-indigo-600";
 
 export default function ContactModal({
   variant = "primary",

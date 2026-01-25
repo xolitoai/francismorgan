@@ -88,7 +88,10 @@ export default function ContactModal({
         onOpenChange={setOpen}
         className="fixed inset-0 z-50 bg-black/40 md:flex md:items-center md:justify-center"
       >
-        <Modal className="w-full h-full md:h-auto md:max-w-md outline-none">
+        <Modal
+          isDismissable
+          className="w-full h-full md:h-auto md:max-w-md outline-none"
+        >
           <Dialog className="h-full lg:h-auto md:rounded-xl bg-white p-6 shadow outline-none">
             <Heading className="text-lg font-semibold text-neutral-900">
               Hablemos de tu proyecto

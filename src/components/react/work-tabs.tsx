@@ -32,7 +32,7 @@ export function WorkTabs({ title, items }: WorkTabsProps) {
                 <Tab
                   key={item.id}
                   id={item.id}
-                  className="block w-full text-left text-sm px-3 py-2 rounded-xl text-neutral-900 outline-none cursor-pointer data-selected:text-indigo-600 data-selected:bg-indigo-600/5 data-focus-visible:ring-2 data-focus-visible:ring-indigo-600 data-focus-visible:ring-offset-2"
+                  className="block w-full text-left px-3 py-2 rounded-xl text-neutral-900 outline-none cursor-pointer data-selected:text-indigo-600 data-selected:bg-indigo-600/5 data-focus-visible:ring-2 data-focus-visible:ring-indigo-600 data-focus-visible:ring-offset-2"
                 >
                   {item.title}
                 </Tab>

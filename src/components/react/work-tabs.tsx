@@ -52,7 +52,7 @@ export function WorkTabs({ title, items }: WorkTabsProps) {
                   {item.description}
                 </p>
 
-                <ul className="mt-6 space-y-2 text-sm">
+                <ul className="mt-6 space-y-2">
                   {item.highlights.map((highlight) => (
                     <li key={highlight} className="flex items-center gap-2">
                       <BulletPoint />

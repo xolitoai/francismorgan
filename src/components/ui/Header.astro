@@ -1,4 +1,5 @@
 ---
+import Image from "astro/components/Image.astro";
 import ContactModal from "../react/contact-modal";
 ---
 
@@ -10,7 +11,15 @@ import ContactModal from "../react/contact-modal";
   >
     <!-- Brand -->
     <a href="/" class="text-lg font-bold tracking-tighter text-neutral-900">
-      francis morgan
+      <Image
+        alt="logo"
+        src={{
+          src: "/brand/francismorgan-full.png",
+          height: 256,
+          width: 256,
+          format: "png",
+        }}
+      />
     </a>
 
     <!-- Navigation + CTA -->

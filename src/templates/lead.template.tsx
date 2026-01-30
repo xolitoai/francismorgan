@@ -5,6 +5,7 @@ import {
   Heading,
   Text,
   Tailwind,
+  Head,
 } from "@react-email/components";
 import type { ContactSchema } from "../lib/zod/contact.schema";
 
@@ -19,6 +20,7 @@ export function ContactLeadEmail({
 }: ContactLeadEmailProps) {
   return (
     <Html>
+      <Head />
       <Tailwind>
         <Body className="font-sans">
           <Container className="mx-auto my-12 max-w-xl rounded-xl bg-white px-8 py-10 shadow-sm">

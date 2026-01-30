@@ -23,10 +23,11 @@ export function ContactLeadEmail({
       <Head />
       <Tailwind>
         <Body className="font-sans">
-          <Container className="mx-auto my-12 max-w-xl rounded-xl bg-white px-8 py-10 shadow-sm">
-            <Heading className="relative mb-6 text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900">
+          <Container>
+            {/* <Container className="mx-auto my-12 max-w-xl rounded-xl bg-white px-8 py-10 shadow-sm"> */}
+            {/* <Heading className="relative mb-6 text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900">
               Nuevo lead desde el sitio
-            </Heading>
+            </Heading> */}
 
             <Text className="text-sm text-neutral-500">
               Se recibió un nuevo mensaje de contacto con la siguiente

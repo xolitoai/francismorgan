@@ -24,10 +24,6 @@ export function ContactLeadEmail({
       <Tailwind>
         <Body className="font-sans">
           <Container className="mx-auto max-w-xl bg-white px-8 py-10">
-            {/* <Container className="mx-auto my-12 max-w-xl rounded-xl bg-white px-8 py-10 shadow-sm"> */}
-            {/* <Heading className="relative mb-6 text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900">
-              Nuevo lead desde el sitio
-            </Heading> */}
             <Heading className="text-xl font-semibold tracking-tight text-neutral-900">
               Nuevo lead desde el sitio
             </Heading>

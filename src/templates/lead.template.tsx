@@ -23,8 +23,8 @@ export function ContactLeadEmail({
         <Body className="font-sans">
           <Container className="mx-auto my-12 max-w-xl rounded-xl bg-white px-8 py-10 shadow-sm">
             {/* Title with indigo accent (WorkTabs-inspired) */}
-            <div className="relative mb-6 pl-4">
-              <Heading className="relative pl-4 text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-5 before:w-1 before:bg-indigo-600">
+            <div className="relative mb-6">
+              <Heading className="relative text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900">
                 Nuevo lead desde el sitio
               </Heading>
             </div>

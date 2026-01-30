@@ -16,4 +16,5 @@ export default defineConfig({
   server: { host: true },
   integrations: [react()],
   adapter: vercel(),
+  output: "server",
 });

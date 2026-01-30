@@ -1,6 +1,6 @@
 import { useState } from "react";
 import clsx from "clsx";
-import { useForm } from "react-hook-form";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import {
   Modal,
   ModalOverlay,
@@ -12,6 +12,12 @@ import {
   Label,
   TextField,
 } from "react-aria-components";
+import {
+  contactSchema,
+  type ContactSchema,
+} from "../../lib/zod/contact.schema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { actions } from "astro:actions";
 
 type Variant = "primary" | "secondary" | "link";
 type Size = "small" | "base" | "large";
@@ -19,14 +25,6 @@ type Size = "small" | "base" | "large";
 type Props = {
   variant?: Variant;
   size?: Size;
-};
-
-type FormValues = {
-  name: string;
-  email: string;
-  company: string;
-  website: string;
-  message: string;
 };
 
 const inputClasses =
@@ -43,17 +41,22 @@ export default function ContactModal({
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<FormValues>();
+  } = useForm<ContactSchema>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      company: "",
+      email: "",
+      message: "",
+      name: "",
+      website: "",
+    },
+  });
 
-  async function onSubmit(data: FormValues) {
-    await fetch("/api/contact", {
-      method: "POST",
-      body: new URLSearchParams(data),
-    });
-
+  const onSubmit: SubmitHandler<ContactSchema> = async (payload) => {
+    await actions.lead(payload);
     reset();
     setOpen(false);
-  }
+  };
 
   const triggerClasses = clsx(
     "cursor-pointer transition outline-none",
@@ -108,9 +111,7 @@ export default function ContactModal({
                 </Label>
                 <Input
                   autoFocus
-                  {...register("name", {
-                    required: "El nombre es obligatorio",
-                  })}
+                  {...register("name")}
                   placeholder="¿Cómo te llamas?"
                   className={inputClasses}
                 />
@@ -126,13 +127,7 @@ export default function ContactModal({
                   Correo electronico
                 </Label>
                 <Input
-                  {...register("email", {
-                    required: "El email es obligatorio",
-                    pattern: {
-                      value: /\S+@\S+\.\S+/,
-                      message: "Email inválido",
-                    },
-                  })}
+                  {...register("email")}
                   type="email"
                   placeholder="tu@email.com"
                   className={inputClasses}
@@ -149,7 +144,7 @@ export default function ContactModal({
                   Sitio web
                 </Label>
                 <Input
-                  {...register("website", {})}
+                  {...register("website")}
                   placeholder="https://tusitio.com (opcional)"
                   className={inputClasses}
                 />
@@ -159,7 +154,7 @@ export default function ContactModal({
                   Compañia
                 </Label>
                 <Input
-                  {...register("company", {})}
+                  {...register("company")}
                   placeholder="Nombre de tu empresa, producto o proyecto"
                   className={inputClasses}
                 />
@@ -170,20 +165,7 @@ export default function ContactModal({
                   Cuentanos mas de tu proyecto
                 </Label>
                 <TextArea
-                  {...register("message", {
-                    required: "Cuéntanos sobre tu proyecto",
-                    validate: (value) => {
-                      const wordCount = value
-                        .trim()
-                        .split(/\s+/)
-                        .filter(Boolean).length;
-
-                      return (
-                        wordCount >= 10 ||
-                        "El mensaje debe tener al menos 10 palabras"
-                      );
-                    },
-                  })}
+                  {...register("message")}
                   rows={4}
                   placeholder="Cuéntanos qué quieres construir, qué problema quieres resolver y en qué etapa estás"
                   className={inputClasses}

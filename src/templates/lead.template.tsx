@@ -20,7 +20,7 @@ export function ContactLeadEmail({
   return (
     <Html>
       <Tailwind>
-        <Body className="bg-neutral-100 font-sans">
+        <Body className="font-sans">
           <Container className="mx-auto my-12 max-w-xl rounded-xl bg-white px-8 py-10 shadow-sm">
             {/* Title with indigo accent (WorkTabs-inspired) */}
             <div className="relative mb-6 pl-4">

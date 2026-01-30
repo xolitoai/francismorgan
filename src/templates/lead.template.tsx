@@ -24,7 +24,6 @@ export function ContactLeadEmail({
           <Container className="mx-auto my-12 max-w-xl rounded-xl bg-white px-8 py-10 shadow-sm">
             {/* Title with indigo accent (WorkTabs-inspired) */}
             <div className="relative mb-6 pl-4">
-              <div className="absolute left-0 top-1 h-5 w-1 bg-indigo-600" />
               <Heading className="relative pl-4 text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-5 before:w-1 before:bg-indigo-600">
                 Nuevo lead desde el sitio
               </Heading>
